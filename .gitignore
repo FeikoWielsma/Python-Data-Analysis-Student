@@ -9,7 +9,8 @@
 **/.ruff_cache/
 **/.pytest_cache/
 **/.idea/
-**/.vscode/
+**/.vscode/*
+!/.vscode/settings.json
 .DS_Store
 Thumbs.db
 Desktop.ini
@@ -28,3 +29,9 @@ desktop.ini
 /datasets/demos/02-intro-pandas/summary.csv
 /datasets/demos/13-data-formats-and-tools/orders.parquet
 /datasets/road-deaths-by-age.png
+/demos/**/*.png
+/demos/**/*.pdf
+/demos/**/*.svg
+/demos/02-intro-pandas/sunspots.*
+/demos/02-intro-pandas/summary.csv
+/demos/13-data-formats-and-tools/orders.parquet

@@ -99,12 +99,14 @@ the folder with that module's data files. Then run any demo with Shift+Enter. Th
 heading above each cell matches the `demoNN · ...` pill on the slide. Change the code
 and run the cell again to experiment; `git restore demos` brings back the original.
 
-The same demos are in the folder as separate `.py` scripts. They read their data with
-a bare file name, so run a script from the matching data folder, for example:
+The same demos are in the folder as separate `.py` scripts, next to the data files
+they read. In VS Code, open one and press the run button (▶): the repository's
+`.vscode/settings.json` makes VS Code run a script from its own folder. From a
+terminal, change to the folder first:
 
 ```sh
-cd datasets/demos/02-intro-pandas
-uv run --project ../../.. --frozen python ../../../demos/02-intro-pandas/demo08-head-and-tail.py
+cd demos/02-intro-pandas
+uv run --frozen python demo08-head-and-tail.py
 ```
 
 Save your own work before running `git pull` to retrieve new course material.

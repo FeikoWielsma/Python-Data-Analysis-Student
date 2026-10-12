@@ -1,0 +1,17 @@
+[
+  {
+    "order_id": "A001",
+    "city": "Amsterdam",
+    "units": 4
+  },
+  {
+    "order_id": "A002",
+    "city": "Utrecht",
+    "units": 1
+  },
+  {
+    "order_id": "A003",
+    "city": "Amsterdam",
+    "units": 2
+  }
+]

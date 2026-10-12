@@ -1,0 +1,7 @@
+Weather station export, De Bilt
+Generated 2026-10-01; values in degrees Celsius and millimetres
+date;max_temp;rain
+2026-09-28;17.4;0.0
+2026-09-29;15.9;3.2
+# sensor maintenance, no reading on 30 September
+2026-10-01;14.1;7.8

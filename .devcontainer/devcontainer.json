@@ -1,12 +1,12 @@
 // GitHub Codespaces setup for students who follow the course online.
 // It installs the same locked environment as the README's local setup (uv sync)
-// and puts the project's .venv first on PATH, so VS Code notebooks and
-// "Open in JupyterLab" both use it.
+// and puts the project's .venv first on PATH for VS Code. "Open in JupyterLab" starts
+// `jupyter` from the system PATH, so the .venv's jupyter commands are linked there.
 {
   "name": "Data Analysis with Python (DSC100)",
   "image": "mcr.microsoft.com/devcontainers/python:3.14",
   "hostRequirements": { "cpus": 2 },
-  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 sh && uv sync --frozen",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 sh && uv sync --frozen && sudo ln -sf \"$PWD\"/.venv/bin/jupyter* /usr/local/bin/",
   "remoteEnv": {
     "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerEnv:PATH}"
   },
@@ -22,6 +22,7 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "python.terminal.executeInFileDir": true,
         "workbench.startupEditor": "readme"
       }
     }
