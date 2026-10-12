@@ -1,0 +1,3 @@
+order_id,customer_id,units,channel
+o003,001,30,online
+o004,003,40,store

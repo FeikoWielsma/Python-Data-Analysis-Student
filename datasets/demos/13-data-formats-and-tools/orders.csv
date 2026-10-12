@@ -1,0 +1,13 @@
+order_id,ordered_at,region,status,units
+0001,2026-06-01,North,shipped,4
+0002,2026-06-02,South,shipped,6
+0003,2026-06-03,North,shipped,
+0004,2026-06-04,South,cancelled,9
+0005,2026-06-05,North,shipped,3
+0006,2026-05-31,North,shipped,100
+0007,2026-06-07,,shipped,5
+0008,2026-06-08,South,shipped,2
+0009,2026-07-01,South,shipped,200
+0010,2026-06-10,North,shipped,0
+0011,2026-06-11,East,shipped,
+0012,2026-06-12,South,shipped,1

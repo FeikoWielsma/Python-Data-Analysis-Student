@@ -1,0 +1,28 @@
+[project]
+name = "python-data-analysis-course"
+version = "0.1.0"
+description = "DSC100 Data Analysis with Python; pandas 3 teaching runtime"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "duckdb>=1.5.6,<2",
+    "jupyterlab>=4.6.4,<5",
+    "matplotlib>=3.11.2,<4",
+    "nbclient>=0.10,<1",
+    "numpy>=2.5.3,<3",
+    "openpyxl>=3.1.5,<4",
+    "pandas>=3.0.6,<4",
+    "polars>=2.0.0,<3",
+    "pyarrow>=26.0.0,<28",
+    "scikit-learn>=1.9.1,<2",
+    "scipy>=1.18.1,<2",
+    "seaborn>=0.13.2,<0.14",
+]
+
+[dependency-groups]
+dev = [
+    "ruff==0.16.10",
+]
+extensions = [
+    "numba>=0.68.0,<0.70",
+    "streamlit>=1.59.1,<2",
+]

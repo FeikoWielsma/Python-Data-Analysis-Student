@@ -1,0 +1,45 @@
+[
+  {
+    "order_id": "A001",
+    "customer": {
+      "name": "Bakker",
+      "city": "Amsterdam"
+    },
+    "items": [
+      {
+        "product": "Coffee",
+        "units": 3
+      },
+      {
+        "product": "Cake",
+        "units": 1
+      }
+    ]
+  },
+  {
+    "order_id": "A002",
+    "customer": {
+      "name": "Jansen",
+      "city": "Utrecht"
+    },
+    "items": [
+      {
+        "product": "Tea",
+        "units": 1
+      }
+    ]
+  },
+  {
+    "order_id": "A003",
+    "customer": {
+      "name": "de Vries",
+      "city": "Amsterdam"
+    },
+    "items": [
+      {
+        "product": "Coffee",
+        "units": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+# Ruff configuration for the DSC100 courseware (demos, exercises and solutions).
+# It ships with the student bundle, so editors use the same rules as CI.
+# The rule set is pinned explicitly, so new ruff releases do not change it.
+
+target-version = "py314"
+line-length = 100
+
+[lint]
+select = [
+    "A",     # shadowed builtins, a real trap in teaching code
+    "ASYNC", # blocking calls inside async def
+    "B",     # bugbear
+    "C4",    # comprehension style
+    "E",     # pycodestyle errors
+    "F",     # pyflakes
+    "FURB",  # modernisation refurb
+    "G",     # logging format
+    "I",     # import sorting
+    "LOG",   # logging misuse
+    "N",     # PEP 8 naming
+    "PERF",  # obvious performance traps
+    "PIE",   # misc lints
+    "PLE",   # pylint errors
+    "PLW",   # pylint warnings
+    "RUF",   # ruff-specific
+    "SIM",   # simplifications
+    "UP",    # pyupgrade, catches the Python 2 residue
+    "W",     # pycodestyle warnings
+]
+
+ignore = [
+    "E741",    # `l`, `I`, `O` as names in short numerical examples
+    "RUF001",  # en-dashes and degree signs in chart labels are intended
+]
+
+[lint.per-file-ignores]
+# Exercise notebooks leave the answer cells empty, so later cells use names that
+# are only defined once the student has filled them in.
+"exercises/**" = ["F401", "F821", "F841", "B905", "C408"]
+"solutions/**" = ["B905", "C408"]
+# `strict=` on zip() is a distraction in the teaching demos.
+"demos/**" = ["B905"]
+# The timing demos compare an explicit loop with the vectorized version.
+"demos/01-numpy/demo02_time_comparison.py" = ["N806", "PERF401"]
+"demos/01-numpy/demo13-c-and-f-order-performance.py" = ["B023"]
+# The upsampling, modelling and plotting demos use the conventional capital X.
+"demos/09-matplotlib/demo14-contour.py" = ["N806", "N816"]
+"demos/09-matplotlib/demo15-surface-3d.py" = ["N806", "N816"]
+"demos/12-scikit-learn/**" = ["N806", "N816"]

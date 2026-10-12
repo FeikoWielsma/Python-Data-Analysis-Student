@@ -1,0 +1,1845 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/workspace/SpiralTrain/Presentation-Template/build/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/workspace/SpiralTrain/Presentation-Template/build/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<style>
+
+/* =============================================================================
+   exercises.css — SpiralTrain Multi-Language Exercises Theme
+   -----------------------------------------------------------------------------
+   A4 print companion to spiraltrain.css. Same 15-language palette system, same
+   typography (Space Grotesk + JetBrains Mono), same brand identity — but tuned
+   for a printable PDF reference manual rather than 16:10 slides.
+
+   Apply a language palette by adding a class to <body> (or any wrapping div):
+       <body class="lang-cs">  (or lang-py / cpp / rust / java / html / js /
+                                    json / n8n / powerbi / perl / oop / sql /
+                                    scrum / git)
+   Without a class, the document uses the default SpiralTrain palette.
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 18mm;
+}
+
+/* ============ DEFAULT PALETTE (SpiralTrain blue) ============ */
+:root,
+body {
+  --ml-primary:    #1F5D9C;
+  --ml-secondary:  #2A8AA8;
+  --ml-accent:     #D94C2F;
+  --ml-tint:       #EEF3F9;
+  --ml-tint-strong:#CCDDED;
+  --ml-text:       #0F1729;
+  --ml-muted:      #6B7686;
+  --ml-rule:       #D9DDE5;
+  --ml-bg:         #FFFFFF;
+
+  --solution-bg:   #F6F8FB;
+  --solution-rule: var(--ml-primary);
+
+  --code-bg:    #F5F7FA;
+  --code-fg:    #0F1729;
+  --code-kw:    #1F5D9C;
+  --code-type:  #6F42C1;
+  --code-prop:  #2761B5;
+  --code-str:   #1A7A3E;
+  --code-cmt:   #7A8493;
+}
+
+/* ============ BODY ============ */
+html, body {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body {
+  font-family: 'Space Grotesk', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13pt;
+  line-height: 1.55;
+  color: var(--ml-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============ HEADINGS ============ */
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26pt;
+  font-weight: 700;
+  color: var(--ml-text);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  border-bottom: 3px solid var(--ml-primary);
+  padding-bottom: 8px;
+  margin: 0 0 0.9em;
+  page-break-before: always;
+  page-break-after: avoid;
+}
+/* Only the TOC title may share its page; every exercise h1 must start a fresh
+   page AND carry its own break-before so Chrome attributes the exercise's
+   anchor destination to the new page (a break inherited from the previous
+   element's break-after lands the anchor on the page before the break). */
+h1.toc-title { page-break-before: auto; }
+
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17pt;
+  font-weight: 600;
+  color: var(--ml-primary);
+  margin: 1.7em 0 0.6em;
+  letter-spacing: -0.005em;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14pt;
+  font-weight: 600;
+  color: var(--ml-primary);
+  margin: 1.3em 0 0.4em;
+  page-break-after: avoid;
+}
+
+h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--ml-text);
+  margin: 1.1em 0 0.3em;
+  page-break-after: avoid;
+}
+
+/* ============ BODY COPY ============ */
+p {
+  margin: 0.5em 0 0.8em;
+  orphans: 3;
+  widows: 3;
+}
+p + pre,
+p + ul,
+p + ol { page-break-before: avoid; }
+
+strong { font-weight: 700; color: var(--ml-text); }
+em { font-style: italic; }
+
+/* ============ LISTS ============ */
+ul, ol {
+  margin: 0.3em 0 0.9em 0;
+  padding-left: 1.5em;
+}
+ul { list-style: disc; }
+ol { list-style: decimal; }
+li {
+  margin-bottom: 0.3em;
+  page-break-inside: avoid;
+}
+li > p { margin: 0.2em 0; }
+li > ul, li > ol { margin: 0.2em 0; }
+
+/* ============ INLINE CODE CHIP ============ */
+:not(pre) > code,
+li > code,
+p > code,
+strong > code,
+em > code {
+  display: inline-block;
+  background: var(--ml-tint);
+  color: var(--ml-primary);
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.86em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ============ CODE BLOCKS ============ */
+pre {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 11pt;
+  line-height: 1.45;
+  padding: 11px 14px;
+  margin: 0.5em 0 0.9em;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-left: 3px solid var(--ml-primary);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  page-break-inside: avoid;
+  tab-size: 4;
+}
+pre code {
+  background: transparent !important;
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: inherit;
+  display: inline;
+}
+pre.shiki { background: var(--code-bg) !important; }
+pre.shiki code { background: transparent; padding: 0; }
+
+/* ============ HORIZONTAL RULES (step separators) ============ */
+hr {
+  border: 0;
+  border-top: 1px solid var(--ml-rule);
+  margin: 1.4em 0;
+}
+
+/* ============ TABLES ============ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6em 0 1em;
+  font-size: 11.5pt;
+  page-break-inside: avoid;
+}
+th {
+  background: var(--ml-primary);
+  color: #fff;
+  padding: 5px 9px;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 11pt;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--ml-rule);
+}
+td {
+  padding: 4px 9px;
+  border: 1px solid var(--ml-rule);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: #fafbfd; }
+
+/* ============ BLOCKQUOTES ============ */
+blockquote {
+  margin: 0.8em 0;
+  padding: 0.6em 1em;
+  border-left: 3px solid var(--ml-secondary);
+  background: var(--ml-tint);
+  color: var(--ml-text);
+  font-size: 0.97em;
+  border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: 0.2em 0; }
+
+/* ============ CALLOUTS (GitHub-style alerts) =================================
+   Generated from `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and
+   `> [!CAUTION]` blockquotes by shiki-exercises.mjs. NOTE / TIP / IMPORTANT pick
+   up the active language palette; WARNING / CAUTION use fixed semantic colours so
+   they read as warnings regardless of the per-language theme.
+   ============================================================================= */
+.callout {
+  margin: 1em 0;
+  padding: 0.7em 1.1em 0.8em;
+  border-left: 4px solid var(--callout-accent, var(--ml-secondary));
+  background: var(--callout-bg, var(--ml-tint));
+  border-radius: 0 6px 6px 0;
+  font-size: 0.97em;
+  page-break-inside: avoid;
+}
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 0.35em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--callout-accent, var(--ml-secondary));
+}
+.callout-title::before {
+  content: '';
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--callout-accent, var(--ml-secondary));
+}
+.callout-body > :first-child { margin-top: 0; }
+.callout-body > :last-child { margin-bottom: 0; }
+.callout-body p { margin: 0.35em 0; }
+
+.callout-note     { --callout-accent: var(--ml-secondary); --callout-bg: var(--ml-tint); }
+.callout-tip      { --callout-accent: #1F8A5B; --callout-bg: #EAF6F0; }
+.callout-important { --callout-accent: var(--ml-primary); --callout-bg: var(--ml-tint); }
+.callout-warning  { --callout-accent: #B07A12; --callout-bg: #FBF3E0; }
+.callout-caution  { --callout-accent: #C0392B; --callout-bg: #FBEAE7; }
+
+/* ============ LINKS ============ */
+a {
+  color: var(--ml-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ml-secondary);
+}
+a:hover { border-bottom-style: solid; }
+
+/* =============================================================================
+   TABLE-OF-CONTENTS PAGE (rendered by build.ts buildExercises)
+   ============================================================================= */
+.toc-stripe {
+  height: 12px;
+  background: linear-gradient(90deg, var(--ml-primary) 0%, var(--ml-secondary) 50%, var(--ml-accent) 100%);
+  margin: 0 0 3.5em 0;
+  border-radius: 6px;
+}
+.toc-title {
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48pt;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ml-primary);
+  margin: 0.5em 0 0.1em;
+  padding: 0;
+  border: 0;
+  page-break-before: auto;
+}
+.toc-subtitle {
+  text-align: center;
+  color: var(--ml-secondary);
+  margin-bottom: 4.5em;
+  font-size: 16pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+.toc-list {
+  list-style: none;
+  padding: 0;
+  max-width: 720px;
+  margin: 0 auto;
+  /* No break-after here: the first exercise h1 must own its page break, or
+     Chrome attributes its anchor destination to the TOC's last page. */
+}
+.toc-list li {
+  margin-bottom: 18px;
+  font-size: 16.5pt;
+  font-weight: 500;
+}
+.toc-list a {
+  display: flex;
+  align-items: baseline;
+  color: var(--ml-text);
+  text-decoration: none;
+  border-bottom: 0;
+}
+.toc-list a:hover {
+  color: var(--ml-primary);
+}
+.toc-text {
+  flex-shrink: 0;
+}
+.toc-dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted var(--ml-rule);
+  margin: 0 10px;
+}
+.toc-page {
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--ml-muted);
+}
+.toc-list a:hover .toc-page {
+  color: var(--ml-primary);
+}
+
+/* TOC divider: before the first appendix entry, and as module group header
+   when a course keeps several exercises in one file per module */
+.toc-list li.toc-divider {
+  list-style: none;
+  margin: 1.4em 0 0.6em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ml-muted);
+  font-weight: 700;
+  border-top: 1px dashed var(--ml-rule);
+  padding-top: 0.6em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.toc-list li {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.toc-list li.toc-divider span {
+  background: var(--ml-bg, #fff);
+}
+
+/* Appendix tag rendered next to the exercise H1 */
+.exercise-appendix-tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 14px;
+  padding: 3px 10px;
+  background: var(--ml-tint);
+  color: var(--ml-primary);
+  border: 1px solid var(--ml-secondary);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  top: -4px;
+}
+
+/* TOC compact variants — triggered when item count exceeds threshold
+   toc-lg: 16–20 items   toc-xl: 21+ items */
+.toc-lg .toc-stripe { margin-bottom: 2em; }
+.toc-lg .toc-title { font-size: 40pt; }
+.toc-lg .toc-subtitle { font-size: 13pt; margin-bottom: 3em; }
+.toc-lg .toc-list li { font-size: 14pt; margin-bottom: 13px; }
+.toc-lg .toc-list li.toc-divider { font-size: 10pt; margin: 0.9em 0 0.4em; }
+
+.toc-xl .toc-stripe { margin-bottom: 1.5em; }
+.toc-xl .toc-title { font-size: 36pt; }
+.toc-xl .toc-subtitle { font-size: 12pt; margin-bottom: 2em; }
+.toc-xl .toc-list li { font-size: 13pt; margin-bottom: 9px; }
+.toc-xl .toc-list li.toc-divider { font-size: 9pt; margin: 0.7em 0 0.3em; }
+
+/* =============================================================================
+   REFERENCE SOLUTION BLOCK
+   ============================================================================= */
+details.solution-page {
+  page-break-before: always;
+  margin-top: 0.6em;
+}
+details.solution-page > summary {
+  list-style: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 11.5pt;
+  color: var(--ml-primary);
+  margin-bottom: 0.5em;
+  cursor: default;
+  letter-spacing: 0.01em;
+}
+details.solution-page > summary::-webkit-details-marker { display: none; }
+details.solution-page > summary::marker { content: ""; }
+details.solution-page pre {
+  page-break-inside: auto;
+  background: var(--solution-bg);
+  border-left: 3px solid var(--solution-rule);
+}
+
+.solution-hint {
+  font-size: 9pt;
+  color: var(--ml-muted);
+  font-style: italic;
+  text-align: right;
+  margin: 0.4em 0 0;
+  letter-spacing: 0.02em;
+}
+
+/* =============================================================================
+   PER-LANGUAGE PALETTES — apply class on <body> or any wrapper element
+   ============================================================================= */
+
+/* ── C# / .NET ────────────────────────────────────────────────────────── */
+.lang-cs {
+  --ml-primary: #512BD4;
+  --ml-secondary: #9B4993;
+  --ml-accent: #E5004B;
+  --ml-tint: #F0ECFB;
+  --ml-tint-strong: #DDD0F4;
+  --solution-bg: #F7F5FC;
+  --solution-rule: #9B4993;
+  --code-bg: #F7F5FC;
+  --code-kw: #9B4993;
+  --code-type: #512BD4;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8B88A8;
+}
+
+/* ── Python ───────────────────────────────────────────────────────────── */
+.lang-py {
+  --ml-primary: #2B6BAD;
+  --ml-secondary: #4B8BBE;
+  --ml-accent: #F2C94C;
+  --ml-tint: #EAF2FA;
+  --ml-tint-strong: #C7DDF0;
+  --solution-bg: #F4F8FC;
+  --solution-rule: #F2C94C;
+  --code-bg: #F4F8FC;
+  --code-kw: #2B6BAD;
+  --code-type: #1C4F84;
+  --code-prop: #1F6F4F;
+  --code-str: #A56700;
+  --code-cmt: #859AB0;
+}
+
+/* ── C / C++ ──────────────────────────────────────────────────────────── */
+.lang-cpp,
+.lang-c {
+  --ml-primary: #00599C;
+  --ml-secondary: #004482;
+  --ml-accent: #659AD2;
+  --ml-tint: #E5EEF6;
+  --ml-tint-strong: #B8CFE5;
+  --solution-bg: #F1F6FB;
+  --solution-rule: #659AD2;
+  --code-bg: #F1F6FB;
+  --code-kw: #00599C;
+  --code-type: #6B358C;
+  --code-prop: #1F6F4F;
+  --code-str: #B14E22;
+  --code-cmt: #7A8DA1;
+}
+
+/* ── Rust (dark code panel) ───────────────────────────────────────────── */
+.lang-rust {
+  --ml-primary: #B7410E;
+  --ml-secondary: #CE422B;
+  --ml-accent: #2A2A2A;
+  --ml-tint: #FBEDE5;
+  --ml-tint-strong: #F2CFB8;
+  --solution-bg: #1a1a1f;
+  --solution-rule: #B7410E;
+  --code-bg: #1a1a1f;
+  --code-fg: #e8e6e3;
+  --code-kw: #CE422B;
+  --code-type: #E8C547;
+  --code-prop: #88C0D0;
+  --code-str: #A3BE8C;
+  --code-cmt: #8a8278;
+}
+.lang-rust pre,
+.lang-rust pre.shiki,
+.lang-rust details.solution-page pre { background: #1a1a1f !important; color: #e8e6e3 !important; }
+.lang-rust pre code { color: inherit; }
+
+/* ── Java ─────────────────────────────────────────────────────────────── */
+.lang-java {
+  --ml-primary: #5382A1;
+  --ml-secondary: #ED8B00;
+  --ml-accent: #1F4F7A;
+  --ml-tint: #ECF2F6;
+  --ml-tint-strong: #C7D9E5;
+  --solution-bg: #F3F7FA;
+  --solution-rule: #ED8B00;
+  --code-bg: #F3F7FA;
+  --code-kw: #ED8B00;
+  --code-type: #5382A1;
+  --code-prop: #1F4F7A;
+  --code-str: #1F7A4A;
+  --code-cmt: #7E94A6;
+}
+
+/* ── HTML / CSS ───────────────────────────────────────────────────────── */
+.lang-html,
+.lang-css {
+  --ml-primary: #E34F26;
+  --ml-secondary: #264DE4;
+  --ml-accent: #2965F1;
+  --ml-tint: #FDEFEA;
+  --ml-tint-strong: #FACFBE;
+  --solution-bg: #FFF8F5;
+  --solution-rule: #264DE4;
+  --code-bg: #FFF8F5;
+  --code-kw: #264DE4;
+  --code-type: #E34F26;
+  --code-prop: #B14E22;
+  --code-str: #1F7A4A;
+  --code-cmt: #98968F;
+}
+
+/* ── JavaScript ───────────────────────────────────────────────────────── */
+.lang-js {
+  --ml-primary: #1A1A1A;
+  --ml-secondary: #B58900;
+  --ml-accent: #323330;
+  --ml-tint: #FFF8C9;
+  --ml-tint-strong: #FFEC4F;
+  --solution-bg: #FFFDF0;
+  --solution-rule: #F7DF1E;
+  --code-bg: #FFFDF0;
+  --code-kw: #B58900;
+  --code-type: #1A1A1A;
+  --code-prop: #1F6F4F;
+  --code-str: #A56700;
+  --code-cmt: #8A8A8A;
+}
+
+/* ── JSON ─────────────────────────────────────────────────────────────── */
+.lang-json {
+  --ml-primary: #2D3142;
+  --ml-secondary: #FF6B35;
+  --ml-accent: #4F5466;
+  --ml-tint: #F2F1F4;
+  --ml-tint-strong: #D6D4DC;
+  --solution-bg: #F9F8FC;
+  --solution-rule: #FF6B35;
+  --code-bg: #F9F8FC;
+  --code-kw: #2D3142;
+  --code-type: #FF6B35;
+  --code-prop: #2563EB;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a87a3;
+}
+
+/* ── n8n ──────────────────────────────────────────────────────────────── */
+.lang-n8n {
+  --ml-primary: #EA4B71;
+  --ml-secondary: #1D1D1D;
+  --ml-accent: #FF6D5A;
+  --ml-tint: #FCEAF0;
+  --ml-tint-strong: #F5C4D2;
+  --solution-bg: #FFF6F8;
+  --solution-rule: #EA4B71;
+  --code-bg: #FFF6F8;
+  --code-kw: #EA4B71;
+  --code-type: #B73552;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #B19BA5;
+}
+
+/* ── Power BI ─────────────────────────────────────────────────────────── */
+.lang-powerbi {
+  --ml-primary: #0B5394;
+  --ml-secondary: #F2C811;
+  --ml-accent: #E8A33D;
+  --ml-tint: #E7F0FB;
+  --ml-tint-strong: #B8D2EE;
+  --solution-bg: #F4F8FD;
+  --solution-rule: #F2C811;
+  --code-bg: #F4F8FD;
+  --code-kw: #0B5394;
+  --code-type: #B58900;
+  --code-prop: #117DBB;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a9fb0;
+}
+
+/* ── Perl ─────────────────────────────────────────────────────────────── */
+.lang-perl {
+  --ml-primary: #002545;
+  --ml-secondary: #4A82B6;
+  --ml-accent: #93C9FF;
+  --ml-tint: #E5EEF7;
+  --ml-tint-strong: #B8D0E8;
+  --solution-bg: #F4F8FC;
+  --solution-rule: #4A82B6;
+  --code-bg: #F4F8FC;
+  --code-kw: #002545;
+  --code-type: #4A82B6;
+  --code-prop: #B14E22;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a9fb0;
+}
+
+/* ── OOP ──────────────────────────────────────────────────────────────── */
+.lang-oop {
+  --ml-primary: #1F8A5B;
+  --ml-secondary: #4A5568;
+  --ml-accent: #2DA66F;
+  --ml-tint: #E8F4ED;
+  --ml-tint-strong: #B8DDC8;
+  --solution-bg: #F4FAF6;
+  --solution-rule: #2DA66F;
+  --code-bg: #F4FAF6;
+  --code-kw: #1F8A5B;
+  --code-type: #2D5F89;
+  --code-prop: #1B66C9;
+  --code-str: #B14E22;
+  --code-cmt: #8a9b8e;
+}
+
+/* ── SQL ──────────────────────────────────────────────────────────────── */
+.lang-sql {
+  --ml-primary: #0F766E;
+  --ml-secondary: #E0AF68;
+  --ml-accent: #135C57;
+  --ml-tint: #E0F2F1;
+  --ml-tint-strong: #ABDDD8;
+  --solution-bg: #F2FAF9;
+  --solution-rule: #E0AF68;
+  --code-bg: #F2FAF9;
+  --code-kw: #0F766E;
+  --code-type: #B58900;
+  --code-prop: #2761b5;
+  --code-str: #B14E22;
+  --code-cmt: #6f897f;
+}
+
+/* ── Scrum / Agile ────────────────────────────────────────────────────── */
+.lang-scrum,
+.lang-agile {
+  --ml-primary: #5E60CE;
+  --ml-secondary: #FFB703;
+  --ml-accent: #4A4DA8;
+  --ml-tint: #ECECFA;
+  --ml-tint-strong: #C9C9F0;
+  --solution-bg: #F5F5FC;
+  --solution-rule: #FFB703;
+  --code-bg: #F5F5FC;
+  --code-kw: #5E60CE;
+  --code-type: #C58800;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a87a3;
+}
+
+/* ── Git ──────────────────────────────────────────────────────────────── */
+.lang-git {
+  --ml-primary: #F05033;
+  --ml-secondary: #2C2C2C;
+  --ml-accent: #C04125;
+  --ml-tint: #FBE9E3;
+  --ml-tint-strong: #F5C0B0;
+  --solution-bg: #FAFAFA;
+  --solution-rule: #F05033;
+  --code-bg: #FAFAFA;
+  --code-kw: #F05033;
+  --code-type: #2C2C2C;
+  --code-prop: #2C2C2C;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a8a8a;
+}
+
+/* ── Go ───────────────────────────────────────────────────────────────── */
+.lang-go {
+  --ml-primary: #00ADD8;
+  --ml-secondary: #00758D;
+  --ml-accent: #CE3262;
+  --ml-tint: #E0F4F9;
+  --ml-tint-strong: #B5E5F0;
+  --solution-bg: #F2FAFC;
+  --solution-rule: #00758D;
+  --code-bg: #F2FAFC;
+  --code-kw: #00758D;
+  --code-type: #CE3262;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8AA5AC;
+}
+
+/* ============ TWO-COL LAYOUT ============ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+  margin-top: 0.4em;
+  align-items: start;
+}
+.two-col.split-20-80 { grid-template-columns: 2fr 8fr; }
+.two-col.split-30-70 { grid-template-columns: 3fr 7fr; }
+.two-col.split-40-60 { grid-template-columns: 4fr 6fr; }
+.two-col.split-60-40 { grid-template-columns: 6fr 4fr; }
+.two-col.split-70-30 { grid-template-columns: 7fr 3fr; }
+.two-col.split-80-20 { grid-template-columns: 8fr 2fr; }
+.two-col table { font-size: 9.5pt; margin-top: 0; }
+
+
+/* ============ MEDIA SCREEN (Simulation of A4 page on screen) ============ */
+@media screen {
+  html {
+    background-color: #f3f4f6;
+  }
+  body {
+    background-color: #ffffff;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 50px 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* Simulate A4 page breaks/chapter dividers on screen */
+  h1 {
+    margin-top: 80px !important;
+    padding-top: 50px;
+    border-top: 2px dashed var(--ml-rule);
+  }
+  h1:first-of-type,
+  h1.toc-title {
+    margin-top: 0 !important;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  /* Simulate page breaks before solutions on screen */
+  details.solution-page {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px dashed var(--ml-rule);
+  }
+}
+
+
+
+
+</style>
+
+
+
+<div class="lang-python">
+
+<div class="toc-stripe"></div>
+
+<h1 class="toc-title">Data Analysis with Python</h1>
+
+<div class="toc-subtitle">Course Exercises</div>
+
+<ul class="toc-list">
+
+  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : NumPy</span><span class="toc-dots"></span><span class="toc-page">2</span></a></li>
+
+  <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Pandas Intro</span><span class="toc-dots"></span><span class="toc-page">5</span></a></li>
+
+  <li><a href="#ex-2"><span class="toc-text">Exercise 3 : Selecting and Filtering</span><span class="toc-dots"></span><span class="toc-page">7</span></a></li>
+
+  <li><a href="#ex-3"><span class="toc-text">Exercise 4 : Cleaning and Transforming</span><span class="toc-dots"></span><span class="toc-page">10</span></a></li>
+
+  <li><a href="#ex-4"><span class="toc-text">Exercise 5 : Advanced Indexing</span><span class="toc-dots"></span><span class="toc-page">14</span></a></li>
+
+  <li><a href="#ex-5"><span class="toc-text">Exercise 6 : Rearranging Data</span><span class="toc-dots"></span><span class="toc-page">17</span></a></li>
+
+  <li><a href="#ex-6"><span class="toc-text">Exercise 7 : Combining Data</span><span class="toc-dots"></span><span class="toc-page">20</span></a></li>
+
+  <li><a href="#ex-7"><span class="toc-text">Exercise 8 : Grouping Data</span><span class="toc-dots"></span><span class="toc-page">24</span></a></li>
+
+  <li><a href="#ex-8"><span class="toc-text">Exercise 9 : Visualization</span><span class="toc-dots"></span><span class="toc-page">27</span></a></li>
+
+  <li><a href="#ex-9"><span class="toc-text">Exercise 10 : Time Series</span><span class="toc-dots"></span><span class="toc-page">30</span></a></li>
+
+  <li><a href="#ex-10"><span class="toc-text">Exercise 11 : Integration Case</span><span class="toc-dots"></span><span class="toc-page">34</span></a></li>
+
+  <li><a href="#ex-11"><span class="toc-text">Exercise 13 : Data Formats and Tools</span><span class="toc-dots"></span><span class="toc-page">38</span></a></li>
+
+</ul>
+
+<!-- pac-exercise: dsc100.exercise.numpy.01 -->
+
+<!-- pac-source: exercises:p0003 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-1--numpy"><a id="ex-0"></a><a id="pac-dsc100.exercise.numpy.01"></a>Exercise 1 : NumPy</h1>
+<p>Open <code>exercises/01-numpy/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/01-numpy/solution.ipynb</code>.</p>
+<p>Run the first cell : it imports NumPy as <code>np</code>. The values that a step gives you are already
+assigned in the notebook.</p>
+<h2 id="step-1--arrays">Step 1 : Arrays</h2>
+<p>Print the NumPy version. Convert the list <code>numbers = [12.23, 13.32, 100, 36.32]</code> into a
+one-dimensional array and print its <code>ndim</code>.</p>
+<h2 id="step-2--creating-arrays">Step 2 : Creating arrays</h2>
+<p>Create a 4x2 matrix with the values 5 to 12 with <code>np.arange</code> and <code>reshape</code>. Create a vector of eight
+zeros and set its third value, at position 2, to 4.</p>
+<h2 id="step-3--broadcasting">Step 3 : Broadcasting</h2>
+<p>Reshape the integers 1 to 6 into <code>readings</code> with shape <code>(3, 2)</code>. The array <code>scale</code> has shape
+<code>(3, 1)</code> : <code>np.array([[1], [10], [100]])</code>. Predict the shape of <code>readings * scale</code>, then run it.
+Which axis of <code>readings</code> does <code>scale</code> match?</p>
+<p>Try <code>readings + np.array([1, 2, 3])</code> inside <code>try</code>/<code>except ValueError</code> and print the error. Why are
+the shapes <code>(3, 2)</code> and <code>(3,)</code> incompatible?</p>
+<p>Compute <code>readings.sum(axis=0)</code> and <code>readings.sum(axis=1)</code>. Which of the two has one value per row?</p>
+<h2 id="step-4--views-and-copies">Step 4 : Views and copies</h2>
+<p><code>original = np.arange(5, 30)</code> holds the integers 5 to 29. Print it in reverse order, so that the
+first element becomes the last.</p>
+<p>Take <code>view = original[2:5]</code> and an independent copy of the same slice with <code>.copy()</code>. Set
+<code>view[0] = -1</code> and print the first five values of <code>original</code> and the copy. Check with
+<code>np.shares_memory()</code> which of the two shares memory with <code>original</code>. When do you need a copy before
+you change a slice?</p>
+<h2 id="step-5--data-types">Step 5 : Data types</h2>
+<p>Convert <code>whole_numbers = [3, 6, 9, 12]</code> to an array with <code>dtype=np.float64</code>, divide it by 4 and
+print the result and its dtype. Convert the list <code>as_list</code> and the tuple <code>as_tuple</code> to arrays with
+<code>np.asarray</code>.</p>
+<p>For <code>measured = np.array([2, 4, 6, 8], dtype=np.int32)</code>, print the number of elements, the size of
+one element in bytes and the total number of bytes.</p>
+<h2 id="step-6--appending-and-filling">Step 6 : Appending and filling</h2>
+<p>Append the values 35 to 75, in steps of 10, to <code>collected = np.array([5, 15, 25])</code> with
+<code>np.append</code>. Print both arrays. Does <code>np.append</code> change <code>collected</code>?</p>
+<p>Create an empty 2x5 array with <code>np.empty</code> and a 4x2 array full of 0.5 with <code>np.full</code>. What values
+does the empty array contain?</p>
+<h2 id="step-7--unique-values">Step 7 : Unique values</h2>
+<p><code>repeated</code> holds six country codes. Print its unique elements and how often each occurs.</p>
+<h2 id="step-8--positions-and-masks">Step 8 : Positions and masks</h2>
+<p>For <code>values = np.array([[4, 17, 9], [12, 3, 21]])</code>, find the position of the minimum and of the
+maximum in each row with <code>argmin</code>, <code>argmax</code> and <code>axis=1</code>.</p>
+<p>Find the elements greater than 10 : print their positions with <code>np.nonzero</code> and their values with a
+Boolean mask.</p>
+<h2 id="step-9--spacing-and-flattening">Step 9 : Spacing and flattening</h2>
+<p>Create a one-dimensional array of 13 evenly spaced values from 1 to 4, both included. Flatten
+<code>nested = np.array([[1, 2], [3, 4], [5, 6]])</code> into a one-dimensional copy.</p>
+<h2 id="step-10--z-scores">Step 10 : Z-scores</h2>
+<p><code>scores = np.array([[70, 80], [90, 60], [80, 70]])</code> holds two test scores, in the columns, for three
+students, in the rows. Standardize each column : subtract the column mean and divide by the column
+standard deviation, both with <code>axis=0</code>. Which student, by row position, lies furthest above the
+average in the first test? Use <code>argmax</code>.</p>
+<!-- pac-exercise: dsc100.exercise.02 -->
+
+<!-- pac-source: exercises:p0004 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-2--pandas-intro"><a id="ex-1"></a><a id="pac-dsc100.exercise.02"></a>Exercise 2 : Pandas Intro</h1>
+<p>Open <code>exercises/02-intro-pandas/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/02-intro-pandas/solution.ipynb</code>.</p>
+<p>Run the first cell : it imports pandas and sets <code>DATA</code> to the folder with the exercise files.</p>
+<h2 id="step-1--inspection">Step 1 : Inspection</h2>
+<p>Read <code>world_ind_pop_data.csv</code>, World Bank population data from 1960 to 2014, into a DataFrame <code>df</code>.
+Look at the first and last rows with <code>df.head()</code> and <code>df.tail()</code>. Which years and countries does
+the file start and end with?</p>
+<h2 id="step-2--missing-values">Step 2 : Missing values</h2>
+<p>Show the data type and the number of non-missing entries of each column with <code>df.info()</code>. Count the
+missing values per column with <code>df.isna().sum()</code>. Does any column have missing values? Where does
+<code>info()</code> show the same answer?</p>
+<h2 id="step-3--broadcasting-1">Step 3 : Broadcasting</h2>
+<p>Build a DataFrame of Dutch cities, with the city name in one column and the country code in the
+other :</p>
+<ul>
+<li>Make a list <code>cities</code> with the names of five Dutch cities</li>
+<li>Make a string <code>country</code> with the value <code>'NL'</code></li>
+<li>Make a dictionary with the pairs <code>'country': country</code> and <code>'city': cities</code></li>
+<li>Build a DataFrame <code>df</code> from the dictionary and print it</li>
+</ul>
+<p>How often does <code>'NL'</code> appear in <code>df</code>, and where do the extra copies come from?</p>
+<h2 id="step-4--column-labels">Step 4 : Column labels</h2>
+<p>Read <code>world_population.csv</code> into <code>df1</code> with <code>pd.read_csv()</code>. Read the same file again into <code>df2</code>,
+this time with <code>header=0</code> and <code>names=new_labels</code>, where <code>new_labels = ['year', 'population']</code>.
+Print both DataFrames and compare the column names. What does <code>header=0</code> tell pandas about the
+first line of the file?</p>
+<h2 id="step-5--a-messy-file">Step 5 : A messy file</h2>
+<p><code>messy_stock_data.tsv</code> has a misleading extension : its fields are separated by spaces. It also
+starts with three introductory lines and contains comment lines that start with <code>#</code>. Open the file
+in JupyterLab's file browser before you write any code.</p>
+<p>Read the file, whose path is in <code>file_messy</code>, into <code>df1</code> with the default options of
+<code>pd.read_csv()</code> and print <code>df1.head()</code>. Read it again into <code>df2</code> with <code>delimiter=' '</code>, <code>header=3</code>
+and <code>comment='#'</code>. The clean table has four rows, IBM, MSFT, GOOGLE and APPLE, and 13 columns :
+<code>name</code> and the months January to December.</p>
+<p>Write <code>df2</code> to the tab-separated file <code>file_clean.tsv</code> with <code>sep='\t'</code> and <code>index=False</code>. Read it
+back with <code>sep='\t'</code> and check that the columns and values are unchanged. Then write <code>df2</code> to
+<code>file_clean.xlsx</code> with <code>to_excel(..., index=False)</code>.</p>
+<!-- pac-exercise: dsc100.exercise.03 -->
+
+<!-- pac-source: exercises:p0006 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-3--selecting-and-filtering"><a id="ex-2"></a><a id="pac-dsc100.exercise.03"></a>Exercise 3 : Selecting and Filtering</h1>
+<p>Open <code>exercises/03-selecting-and-filtering/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/03-selecting-and-filtering/solution.ipynb</code>.</p>
+<p>Run the first cell : it reads <code>pennsylvania2012_turnout.csv</code>, the results of the 2012 US
+presidential election in the 67 counties of Pennsylvania, into <code>election</code>, with the county names as
+row labels. The columns are <code>state</code>, <code>total</code> (votes cast), <code>Obama</code> and <code>Romney</code> (vote shares in
+percent), <code>winner</code>, <code>voters</code> (registered voters), <code>turnout</code> (percent) and <code>margin</code> (winning
+margin in percent).</p>
+<h2 id="step-1--one-value">Step 1 : One value</h2>
+<p>Look at <code>election.head()</code>. Select the winner in Bedford county with <code>.loc</code> and print it.</p>
+<h2 id="step-2--positions">Step 2 : Positions</h2>
+<p>Find the row position <code>x</code> of Bedford and the column position <code>y</code> of <code>winner</code>, so that
+<code>election.iloc[x, y]</code> returns the same value as <code>election.loc['Bedford', 'winner']</code>. Count the
+positions in <code>election.head()</code> ; the first position is 0. Print both selections and compare them
+with <code>==</code>.</p>
+<h2 id="step-3--columns">Step 3 : Columns</h2>
+<p>Create a DataFrame <code>results</code> with the columns <code>winner</code>, <code>total</code> and <code>voters</code>, in that order, and
+print <code>results.head()</code>.</p>
+<h2 id="step-4--row-slices">Step 4 : Row slices</h2>
+<p>The counties are in alphabetical order. Select the counties from <code>'Perry'</code> to <code>'Potter'</code> as
+<code>p_counties</code>. Select the same counties in reverse order, from <code>'Potter'</code> to <code>'Perry'</code> with a step of
+<code>-1</code>, as <code>p_counties_rev</code>. Print both.</p>
+<h2 id="step-5--column-slices">Step 5 : Column slices</h2>
+<p>Select three column ranges with <code>.loc</code> and print the first five rows of each :</p>
+<ul>
+<li>From the first column up to <code>'Obama'</code>, as <code>left_columns</code></li>
+<li>From <code>'Obama'</code> to <code>'winner'</code>, as <code>middle_columns</code></li>
+<li>From <code>'Romney'</code> to the last column, as <code>right_columns</code></li>
+</ul>
+<h2 id="step-6--lists">Step 6 : Lists</h2>
+<p>Select the rows in <code>rows = ['Philadelphia', 'Centre', 'Fulton']</code> and the columns in
+<code>cols = ['winner', 'Obama', 'Romney']</code> with <code>.loc</code>. Assign the result to <code>three_counties</code> and print
+it.</p>
+<h2 id="step-7--filters">Step 7 : Filters</h2>
+<p>Create a Boolean Series <code>high_turnout</code> that is <code>True</code> where <code>turnout</code> is greater than 70. Filter
+<code>election</code> with it into <code>high_turnout_df</code> and print it. How many counties have a turnout above 70?</p>
+<h2 id="step-8--flag-column">Step 8 : Flag column</h2>
+<p>A margin below 1 % is a close result. Create a Boolean Series <code>too_close</code> for these counties and
+store it in <code>election</code> as a new column <code>too_close</code>. Print the <code>winner</code> and <code>margin</code> of the flagged
+counties : you find Berks, Centre and Chester.</p>
+<p>Combine two conditions : which counties have a turnout above 70 and a margin below 5?</p>
+<h2 id="step-9--summaries">Step 9 : Summaries</h2>
+<p>Answer each question with one expression :</p>
+<ul>
+<li>How many counties did each candidate win? Use <code>value_counts()</code> on <code>winner</code></li>
+<li>Which three counties had the highest turnout? Use <code>nlargest</code></li>
+<li>Which county had the smallest margin? Use <code>idxmin()</code> on <code>margin</code></li>
+<li>How many counties had a turnout between 60 and 70 percent? Use <code>between</code> and <code>sum()</code></li>
+<li>What is the median turnout, and how does it compare with the mean?</li>
+<li>What is the turnout in <code>Philadelphia</code>, <code>Allegheny</code> and <code>Centre</code>? Select them with <code>isin</code> on the
+index</li>
+</ul>
+<h2 id="if-time-permits-">If time permits :</h2>
+<ul>
+<li>Which counties did Romney win with a turnout above the median county turnout? Sort them from the
+highest to the lowest turnout and count them</li>
+</ul>
+<!-- pac-exercise: dsc100.exercise.04 -->
+
+<h1 id="exercise-4--cleaning-and-transforming"><a id="ex-3"></a><a id="pac-dsc100.exercise.04"></a>Exercise 4 : Cleaning and Transforming</h1>
+<p>Open <code>exercises/04-cleaning-and-transforming/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/04-cleaning-and-transforming/solution.ipynb</code>.</p>
+<p>Run the first cell : it imports pandas and sets <code>DATA</code> to the folder with the exercise files. The
+steps use three of them :</p>
+<ul>
+<li><code>titanic.csv</code> : one row per passenger of the Titanic, 1309 rows</li>
+<li><code>pittsburgh2013.csv</code> : daily weather in Pittsburgh in 2013, from Weather Underground</li>
+<li><code>pennsylvania2012_turnout.csv</code> : the election results from Exercise 3</li>
+</ul>
+<h2 id="step-1--dropping">Step 1 : Dropping</h2>
+<p>Read <code>titanic.csv</code> into <code>titanic</code>. Select the <code>age</code> and <code>cabin</code> columns into a DataFrame <code>df</code> and
+print its shape. Drop the incomplete rows of <code>df</code> with <code>dropna(how='any')</code> and print the shape, then
+do the same with <code>how='all'</code>. Why do the two shapes differ?</p>
+<p>Count the missing values in each column of <code>titanic</code> with <code>isna().sum()</code> and assign the result to
+<code>missing_per_column</code>. Keep the columns with at most 1000 missing values as <code>titanic_reduced</code>, with
+<code>dropna(axis='columns', thresh=...)</code>. <code>thresh</code> is the minimum number of non-missing values, here
+<code>len(titanic) - 1000</code>. Print the remaining column names. Which columns were dropped?</p>
+<h2 id="step-2--filling">Step 2 : Filling</h2>
+<p>Count the passengers without a port of embarkation in <code>embarked</code> with <code>isna().sum()</code>. Fill the
+gaps with the text <code>'unknown'</code> and store the result back in <code>embarked</code>. Print
+<code>titanic['embarked'].value_counts()</code>. Why is <code>'unknown'</code> a better fill than the most common port?</p>
+<h2 id="step-3--apply">Step 3 : Apply</h2>
+<p>Read <code>pittsburgh2013.csv</code> into <code>weather</code>. Write a function <code>to_celsius(f)</code> that converts degrees
+Fahrenheit to Celsius with <code>(f - 32) * 5 / 9</code>.</p>
+<p>Call <code>.apply(to_celsius)</code> on the columns <code>['Mean TemperatureF', 'Mean Dew PointF']</code> and assign the
+result to <code>df_celsius</code>. Rename its columns to <code>['Mean TemperatureC', 'Mean Dew PointC']</code> and print
+<code>df_celsius.head()</code>.</p>
+<p><code>apply</code> calls <code>to_celsius</code> once per column. Call <code>to_celsius</code> directly on the same two columns and
+compare the values. Why are they the same?</p>
+<h2 id="step-4--map">Step 4 : Map</h2>
+<p>Read <code>pennsylvania2012_turnout.csv</code> into <code>election</code> with <code>index_col='county'</code>. The dictionary
+<code>red_vs_blue</code> gives each candidate a color. Map the <code>winner</code> column with it into a new column
+<code>color</code> and print <code>election.head()</code>.</p>
+<p>Map <code>sample_winners</code> with the same dictionary and print the result. Which values become <code>NaN</code>? Why
+is that safer than a rule that returns <code>'red'</code> for every name other than <code>'Obama'</code>?</p>
+<h2 id="step-5--z-scores">Step 5 : Z-scores</h2>
+<p>A z-score is the number of standard deviations that a value lies above the mean. Add a column
+<code>turnout_zscore</code> with the z-score of <code>turnout</code>, computed with arithmetic on whole columns and
+without <code>apply</code>. Print the five counties with the highest z-score. Does a high z-score prove that a
+turnout figure is wrong?</p>
+<h2 id="step-6--text">Step 6 : Text</h2>
+<p>One column name of <code>weather</code> starts with a space : print <code>weather.columns.tolist()</code> to find it.
+Strip the spaces from all column names with <code>weather.columns.str.strip()</code>.</p>
+<p><code>Events</code> describes the weather of each day, such as <code>'Rain'</code> or <code>'Fog-Snow'</code>, and is missing for a
+quiet day. Count the days with snow with <code>str.contains('Snow')</code> and <code>sum()</code>. Fill the missing events
+with <code>'None'</code> and print the <code>value_counts()</code> of the column.</p>
+<h2 id="step-7--types">Step 7 : Types</h2>
+<p>Create a table <code>daily</code> with the <code>Date</code>, <code>Max TemperatureF</code>, <code>Min TemperatureF</code> and <code>Events</code> columns
+of <code>weather</code>. Rename the temperature columns to <code>max_f</code> and <code>min_f</code>.</p>
+<p>Convert <code>Date</code> from text to dates with <code>pd.to_datetime()</code> and check the result with <code>daily.dtypes</code>.
+Add a column <code>range_f</code>, the difference between <code>max_f</code> and <code>min_f</code>, and print the three days with
+the largest range with <code>nlargest</code>.</p>
+<h2 id="if-time-permits--1">If time permits :</h2>
+<ul>
+<li>On how many days with snow did the maximum temperature rise above freezing, 32 °F? What share of
+all days with snow is that?</li>
+</ul>
+<!-- pac-exercise: dsc100.exercise.05 -->
+
+<!-- pac-source: exercises:p0011 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-5--advanced-indexing"><a id="ex-4"></a><a id="pac-dsc100.exercise.05"></a>Exercise 5 : Advanced Indexing</h1>
+<p>Open <code>exercises/05-advanced-indexing/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/05-advanced-indexing/solution.ipynb</code>.</p>
+<p>Run the first cell : it imports pandas and sets <code>DATA</code> to the folder with the exercise files. The
+steps use two small files with made-up figures for a bike rental company :</p>
+<ul>
+<li><code>rentals.csv</code> : rentals per month from January to June for three bike types, <code>city_bikes</code>,
+<code>e_bikes</code> and <code>cargo_bikes</code>, with a <code>month</code> column. One cargo-bike count is missing</li>
+<li><code>rentalspercity.csv</code> : the January and February rentals split over three cities, with a <code>city</code>
+column : Amsterdam (<code>AMS</code>), Rotterdam (<code>RTM</code>) and Utrecht (<code>UTR</code>)</li>
+</ul>
+<h2 id="step-1--labels-and-positions">Step 1 : Labels and positions</h2>
+<p>Read <code>rentals.csv</code> into <code>rentals</code> with <code>index_col='month'</code>. Select the February city bikes with
+<code>.loc['Feb', 'city_bikes']</code> and with <code>.iloc[1, 0]</code> ; both return 287. Which accessor uses a label,
+and which a position?</p>
+<p>Run the three statements below, each in its own cell. Wrap the first two in
+<code>try</code>/<code>except TypeError</code> and print the error :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">rentals</span><span style="color:#212121">.</span><span style="color:#24292EFF">index</span><span style="color:#212121">[</span><span style="color:#1976D2">0</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#22863A"> 'JAN'</span></span>
+<span class="line"><span style="color:#24292EFF">rentals</span><span style="color:#212121">.</span><span style="color:#24292EFF">index</span><span style="color:#212121">[</span><span style="color:#1976D2">0</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> rentals</span><span style="color:#212121">.</span><span style="color:#24292EFF">index</span><span style="color:#212121">[</span><span style="color:#1976D2">0</span><span style="color:#212121">].</span><span style="color:#6F42C1">upper</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">rentals</span><span style="color:#212121">.</span><span style="color:#24292EFF">index </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> range</span><span style="color:#212121">(</span><span style="color:#6F42C1">len</span><span style="color:#212121">(rentals))</span></span></code></pre>
+
+<p>Which statement succeeds, and what happens to the month labels?</p>
+<h2 id="step-2--alignment">Step 2 : Alignment</h2>
+<p>Read <code>rentals.csv</code> again with its month index. Uppercase all labels with
+<code>rentals.index.str.upper()</code>, assign the result to <code>rentals.index</code> and print <code>rentals</code>.</p>
+<p>Late rental reports arrive as <code>corrections</code>, a Series in a different month order. Add <code>corrections</code>
+to <code>rentals['city_bikes']</code> as <code>aligned</code>. In January-to-June order the values are 322, 290, 412,
+517, 622 and 680.</p>
+<p>Drop the May correction with <code>corrections.drop('MAY')</code>, repeat the addition as <code>partial</code> and find
+the month without a value. Why does the order of the corrections not matter, while a missing label
+does?</p>
+<h2 id="step-3--index-names">Step 3 : Index names</h2>
+<p>Read the table again and uppercase its month labels. Set <code>rentals.index.name = 'MONTH'</code> and
+<code>rentals.columns.name = 'BIKE_TYPE'</code> and print the table. What do these names describe, compared
+with labels such as <code>JAN</code> and <code>city_bikes</code>?</p>
+<h2 id="step-4--index-from-a-column">Step 4 : Index from a column</h2>
+<p>Read <code>rentals.csv</code> without <code>index_col</code> into <code>raw</code>. Build <code>rentals</code> with <code>set_index('month')</code> and
+check <code>rentals.index.is_unique</code>. March has 405 city-bike rentals.</p>
+<p>Reverse the rows with <code>raw.iloc[::-1]</code> and build <code>reordered</code> in the same way. Print
+<code>reordered.loc['Mar', 'city_bikes']</code> and <code>reordered.iloc[0]['city_bikes']</code>. Which of the two
+changed? Why would a fixed list of month names, assigned to the reversed rows, mislabel them?</p>
+<p>Turn the index of <code>reordered</code> back into a column with <code>reset_index()</code> and print the result.</p>
+<h2 id="step-5--duplicate-labels">Step 5 : Duplicate labels</h2>
+<p>Read <code>rentalspercity.csv</code> into <code>by_city</code> with <code>city</code> as the index and check
+<code>by_city.index.is_unique</code>.</p>
+<p>Select <code>by_city.loc['RTM']</code> as <code>rotterdam</code>. How many rows does it return? Compare it with
+<code>by_city.iloc[2]</code>, which selects one row by position.</p>
+<p>Try <code>by_city.reindex(['AMS', 'RTM', 'UTR'])</code> inside <code>try</code>/<code>except ValueError</code> and print the error.
+Why can't pandas pick one row per city?</p>
+<h2 id="if-time-permits--2">If time permits :</h2>
+<p>Two items for the optional MultiIndex slides :</p>
+<ol>
+<li><p>Read <code>rentalspercity.csv</code> into <code>by_city</code> with <code>['city', 'month']</code> as the index, check that the
+index is unique and sort it with <code>sort_index()</code>. Select <code>by_city.loc[['AMS', 'UTR']]</code> as
+<code>selected</code> and <code>by_city.loc['AMS':'UTR']</code> as <code>ranged</code>. How many rows does each have? In which
+order do the months sort?</p>
+</li>
+<li><p>On the same index, select :</p>
+<ul>
+<li>The Rotterdam January row as <code>rtm_jan</code> ; its city-bike value is 97</li>
+<li>The Amsterdam and Utrecht February rows as <code>ams_utr_feb</code>, with a list inside the tuple</li>
+<li>Every city's February row as <code>all_feb</code>, with <code>(slice(None), 'Feb')</code> and again with
+<code>by_city.xs('Feb', level='month')</code></li>
+</ul>
+<p>Print the February city-bike total. Does it match the February value in <code>rentals.csv</code>?</p>
+</li>
+</ol>
+<!-- pac-exercise: dsc100.exercise.06 -->
+
+<!-- pac-source: exercises:p0015 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-6--rearranging-data"><a id="ex-5"></a><a id="pac-dsc100.exercise.06"></a>Exercise 6 : Rearranging Data</h1>
+<p>Open <code>exercises/06-rearranging-data/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/06-rearranging-data/solution.ipynb</code>.</p>
+<p>Run the first cell : it reads <code>users.csv</code> into <code>users</code>, the visitors and newsletter signups of a
+band's blog per weekday and city. <code>index_col=0</code> discards the exported row numbers :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span>  weekday    city  visitors  signups</span></span>
+<span class="line"><span>0     Sun   Paris       139        7</span></span>
+<span class="line"><span>1     Sun  Berlin       237       12</span></span>
+<span class="line"><span>2     Mon   Paris       326        3</span></span>
+<span class="line"><span>3     Mon  Berlin       456        5</span></span></code></pre>
+
+<h2 id="step-1--pivot">Step 1 : Pivot</h2>
+<p>Decide which variable labels the rows (<code>weekday</code>), which labels the columns (<code>city</code>) and which fills
+the cells (<code>visitors</code>), and sketch the result on paper.</p>
+<p>Pivot <code>users</code> with <code>weekday</code> as the index, <code>city</code> as the columns and <code>visitors</code> as the values, and
+print the result. Does it match your sketch?</p>
+<h2 id="step-2--pivoting-all-columns">Step 2 : Pivoting all columns</h2>
+<p>Pivot <code>users</code> again with <code>signups</code> as the values and print it.</p>
+<p>Pivot once more without <code>values</code>. Print the result : both <code>visitors</code> and <code>signups</code> are pivoted,
+under two-level column labels. Select the <code>signups</code> table from it.</p>
+<h2 id="step-3--unstack-and-stack">Step 3 : Unstack and stack</h2>
+<p>Set the index of <code>users</code> to <code>['city', 'weekday']</code>. Unstack the <code>weekday</code> level into <code>byweekday</code>
+and print it. Stack <code>byweekday</code> by <code>weekday</code> and compare the result with the indexed <code>users</code>.</p>
+<p>Remove the Berlin Sunday row with <code>drop(index=('Berlin', 'Sun'))</code> and call the result <code>sparse</code>.
+Unstack and stack the weekday level of <code>sparse</code>. How many rows does the result have, and what is in
+the extra row? Why is that row different from zero visitors?</p>
+<h2 id="step-4--the-other-level">Step 4 : The other level</h2>
+<p>Unstack the <code>city</code> level of the indexed <code>users</code> into <code>bycity</code> and print it. Stack it again by
+<code>city</code>. Are the rows in the same order as in <code>users</code>?</p>
+<h2 id="step-5--index-order">Step 5 : Index order</h2>
+<p>Stack <code>bycity</code> back into <code>newusers</code>. Swap the two index levels with <code>.swaplevel(0, 1)</code> and print
+the result. Is the index sorted? Sort it with <code>sort_index()</code> and compare it with
+<code>users.sort_index()</code> using <code>.equals()</code>.</p>
+<h2 id="step-6--melt">Step 6 : Melt</h2>
+<p>Take the visitors table from Step 1 and turn its weekday index back into a column with
+<code>reset_index()</code>. Melt it with <code>id_vars='weekday'</code>, <code>var_name='city'</code> and <code>value_name='visitors'</code>
+into one row per weekday and city. How many rows do you get?</p>
+<h2 id="step-7--pivot-tables">Step 7 : Pivot tables</h2>
+<p>Read <code>titanic.csv</code>. Each passenger has a <code>pclass</code> (1, 2 or 3), a <code>sex</code> and <code>survived</code> (1 or 0).</p>
+<p>Compute the survival rate per class and sex with <code>pivot_table</code>, with <code>pclass</code> as the index, <code>sex</code>
+as the columns, <code>survived</code> as the values and <code>aggfunc='mean'</code>. Repeat it with <code>aggfunc='count'</code> to
+see how many passengers each rate rests on. Why does <code>pivot</code> fail on this data?</p>
+<h2 id="if-time-permits--3">If time permits :</h2>
+<ul>
+<li>Read <code>users.csv</code> again as in the first cell. Reshape it so that each row is a city and each
+column a weekday, with the signups as values, and add a column <code>total</code> with each city's signups</li>
+</ul>
+<!-- pac-exercise: dsc100.exercise.07 -->
+
+<h1 id="exercise-7--combining-data"><a id="ex-6"></a><a id="pac-dsc100.exercise.07"></a>Exercise 7 : Combining Data</h1>
+<p>Open <code>exercises/07-combining-data/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/07-combining-data/solution.ipynb</code>.</p>
+<p>Compute the 2024 population of each World Bank income group and its share aged 65 and over. Count
+each economy once, and keep every row that you leave out visible in an audit.</p>
+<p>Run the first cell : it sets <code>DATA</code> to the course's <code>datasets</code> folder and <code>SOURCES</code> to the two
+indicator files with their labels. Read <code>datasets/wb-population-README.md</code> first. The files are
+unchanged World Bank downloads, retrieved on 10 October 2026 :</p>
+<ul>
+<li><code>wb-wdi-population-total.csv</code> and <code>wb-wdi-population-65plus.csv</code> : World Development Indicators,
+with one row per economy or aggregate and one column per year</li>
+<li><code>wb-class-economies.csv</code> : the income classification, one row per economy or aggregate</li>
+<li><code>wb-class-groups.csv</code> : the group memberships, one row per economy and group</li>
+</ul>
+<h2 id="step-1--appending">Step 1 : Appending</h2>
+<p>Read the two indicator files into the list <code>frames</code>. Open one of them in a text editor first : four
+metadata lines precede the header, so use <code>skiprows=4</code>. Every line ends with a comma, which creates
+an empty column <code>Unnamed: 70</code>. Check that it is empty and drop it.</p>
+<p>Add the labels of <code>SOURCES</code> as a <code>source</code> column and concatenate the frames once into
+<code>indicators</code>, with a fresh integer index. Check that :</p>
+<ul>
+<li><code>value_counts()</code> on <code>source</code> gives 266 rows per file, 532 in total</li>
+<li>No pair of <code>Country Code</code> and <code>Indicator Code</code> occurs twice</li>
+<li>Every country code is three capital letters : <code>str.fullmatch(r'[A-Z]{3}')</code></li>
+</ul>
+<p>Count the missing 2024 values as <code>missing_2024</code>. Which row is empty? Why is an empty value
+different from zero people?</p>
+<h2 id="step-2--duplicate-keys">Step 2 : Duplicate keys</h2>
+<p>Keep the <code>Country Code</code>, <code>Indicator Code</code> and <code>2024</code> columns of <code>indicators</code> as <code>population_2024</code>.
+Read <code>wb-class-groups.csv</code> into <code>groups</code>. Select every row whose <code>WB_Country_Code</code> occurs more than
+once, keeping all occurrences, as <code>duplicate_groups</code>, and print the memberships of the Netherlands.</p>
+<p>Try a left merge of <code>population_2024</code> with <code>groups</code> on <code>Country Code</code> and <code>WB_Country_Code</code>, with
+<code>validate='many_to_one'</code>. Catch only <code>pd.errors.MergeError</code> and print its message. Why does a
+membership list repeat every economy? Which of the two tables must have unique keys for this merge?</p>
+<h2 id="step-3--validated-merge">Step 3 : Validated merge</h2>
+<p>Read <code>wb-class-economies.csv</code> into <code>economies</code>. Find and drop its one completely empty row with
+<code>isna().all(axis=1)</code>, and check that <code>Code</code> is complete and unique.</p>
+<p>Merge <code>population_2024</code> with <code>economies</code> into <code>combined</code>, with <code>how='left'</code>,
+<code>validate='many_to_one'</code> and <code>indicator=True</code>. Check that <code>combined</code> has as many rows as
+<code>population_2024</code> and the same 2024 total. Each country appears twice on the left, once per
+indicator : why does the validation accept that?</p>
+<h2 id="step-4--audit">Step 4 : Audit</h2>
+<p>Split <code>combined</code> into three parts and check that together they hold all its rows :</p>
+<ul>
+<li><code>unmatched</code> : the <code>left_only</code> rows, whose code is not in <code>economies</code></li>
+<li><code>aggregates</code> : the matched rows without an income group, such as regions and the world</li>
+<li><code>economies_2024</code> : the rows with an income group</li>
+</ul>
+<p>Repeat the merge as <code>outer_audit</code>, with <code>how='outer'</code> and the same validation. Select its
+<code>right_only</code> rows as <code>unused_economies</code> : economies without a row in the indicator files.</p>
+<p>Compute three totals for 2024 :</p>
+<ul>
+<li><code>world</code> : the total population of <code>WLD</code></li>
+<li><code>economy_total</code> : the total population summed over <code>economies_2024</code></li>
+<li><code>gap</code> : the difference between the two</li>
+</ul>
+<p>Which economy explains the gap? Compare the High income aggregate, <code>HIC</code>, with the sum of its member
+economies, then look at <code>unused_economies</code>. Explain in the answer cell whether leaving out the
+aggregates and the unmatched rows loses population.</p>
+<h2 id="step-5--income-groups">Step 5 : Income groups</h2>
+<p>Put the two indicators side by side per income group with <code>pivot_table(..., aggfunc='sum')</code> on
+<code>economies_2024</code>, as <code>by_income</code>, and add the column <code>share_65plus</code>. Why is a sum safe here, while
+the same call on a table that repeats an economy would hide a defect? The slide <em>Aggregating
+Duplicate Pairs</em> shows the risk.</p>
+<h2 id="if-time-permits--4">If time permits :</h2>
+<ol>
+<li>Melt the year columns of the total-population file into <code>long</code>, keeping <code>Country Code</code> and
+<code>Country Name</code>, with the columns <code>year</code> and <code>population</code>. Predict the number of rows, then
+check it. Look up the Netherlands in 2024 by its labels : 17,993,485. Pivot <code>long</code> back into
+<code>restored</code> and look up the Netherlands in 2024 and in 1960 : 11,486,631.</li>
+<li>The notebook builds <code>bad</code>, an unchecked left join of the 2024 population of the economies onto
+<code>groups</code>. Compute <code>original_total</code>, <code>bad_total</code> and <code>extra</code>. Count the rows per economy with
+<code>value_counts()</code> on <code>Country Code</code> as <code>repeats</code>, and find the smallest and largest count.
+Explain in two or three sentences in the answer cell which table repeats its keys, how often,
+why the total grows and what repairs it. Does <code>validate='many_to_many'</code> show that the result is
+correct?</li>
+</ol>
+<!-- pac-exercise: dsc100.exercise.08 -->
+
+<!-- pac-source: exercises:p0018 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-8--grouping-data"><a id="ex-7"></a><a id="pac-dsc100.exercise.08"></a>Exercise 8 : Grouping Data</h1>
+<p>Open <code>exercises/08-grouping-data/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/08-grouping-data/solution.ipynb</code>.</p>
+<p>Run the first cell : it reads <code>titanic.csv</code> into <code>titanic</code>, one row per passenger. The steps use
+these columns :</p>
+<ul>
+<li><code>pclass</code> : ticket class 1, 2 or 3</li>
+<li><code>survived</code> : 1 or 0</li>
+<li><code>sex</code>, <code>age</code>, <code>fare</code> and <code>cabin</code></li>
+<li><code>embarked</code> : the port where the passenger boarded, <code>S</code> Southampton, <code>C</code> Cherbourg or <code>Q</code>
+Queenstown</li>
+</ul>
+<h2 id="step-1--counting">Step 1 : Counting</h2>
+<p>Group <code>titanic</code> by <code>pclass</code> into <code>by_class</code> and count the non-missing <code>survived</code> values per class
+as <code>count_by_class</code>. Group by <code>embarked</code> and <code>pclass</code> together and count <code>survived</code> again as
+<code>count_mult</code>. Print both.</p>
+<h2 id="step-2--size-and-count">Step 2 : size and count</h2>
+<p><code>count()</code> counts non-missing values ; <code>size()</code> counts rows. Print <code>by_class.size()</code> and
+<code>by_class['age'].count()</code>. How many passengers have no recorded age?</p>
+<p><code>count_mult</code> adds up to 1307 of the 1309 passengers. Group by <code>['embarked', 'pclass']</code> again with
+<code>dropna=False</code>, compute <code>size()</code> as <code>size_mult</code> and check that <code>size_mult.sum()</code> equals
+<code>len(titanic)</code>. Which passengers were missing from <code>count_mult</code>?</p>
+<h2 id="step-3--empty-categories">Step 3 : Empty categories</h2>
+<p>Convert <code>embarked</code> to a categorical with the categories <code>port_order</code>, the order in which the
+Titanic called at the ports. Select the passengers aged 60 or over as <code>seniors</code>.</p>
+<p>Group <code>seniors</code> by <code>['embarked', 'pclass']</code> and count <code>survived</code>, once with <code>observed=True</code> and
+once with <code>observed=False</code>. Which combinations appear only with <code>observed=False</code>? How does their 0
+differ from a measured zero?</p>
+<h2 id="step-4--several-aggregates">Step 4 : Several aggregates</h2>
+<p>Group by <code>pclass</code>, select <code>age</code> and <code>fare</code>, and aggregate with <code>['max', 'median']</code>. Print the oldest
+age per class with <code>.loc[:, ('age', 'max')]</code> and the median fare per class with
+<code>.loc[:, ('fare', 'median')]</code>.</p>
+<p>Compute the same two results with named aggregation, <code>oldest_age=('age', 'max')</code> and
+<code>median_fare=('fare', 'median')</code>, and print them.</p>
+<h2 id="step-5--filling-by-group">Step 5 : Filling by group</h2>
+<p>Fill each missing age with the median age of the passengers of the same sex and class. Work on a
+copy, <code>filled = titanic.copy()</code>, so that <code>titanic</code> keeps its missing ages for Step 7 :</p>
+<ul>
+<li>Save a copy of <code>filled['age']</code> as <code>original_age</code></li>
+<li>Add a column <code>age_imputed</code> that is <code>True</code> where the age is missing</li>
+<li>Write a function <code>impute_median(series)</code> that returns <code>series.fillna(series.median())</code></li>
+<li>Group <code>filled</code> by <code>['sex', 'pclass']</code> and assign the result of <code>transform(impute_median)</code> on
+<code>age</code> back to <code>filled['age']</code></li>
+</ul>
+<p>Print the number of filled ages. Check that every known age is unchanged : compare
+<code>filled.loc[~filled['age_imputed'], 'age']</code> with <code>original_age.dropna()</code> using <code>.equals()</code>. Why
+keep the <code>age_imputed</code> column for later analyses?</p>
+<h2 id="step-6--apply">Step 6 : Apply</h2>
+<p>The notebook defines <code>c_deck_survival(group)</code>, the survival rate of the passengers in a group whose
+cabin is on deck C. Group by <code>sex</code>, select the <code>cabin</code> and <code>survived</code> columns and call
+<code>.apply(c_deck_survival)</code>.</p>
+<h2 id="step-7--derived-groups">Step 7 : Derived groups</h2>
+<p>Which share of the children under 10 survived in each class?</p>
+<p>Create the Boolean Series <code>titanic['age'] &lt; 10</code> and map it to labels with
+<code>.map({True: 'under 10', False: '10 or older'})</code>. A missing age compares as <code>False</code> and would land
+in <code>'10 or older'</code> : relabel those passengers with <code>.where(titanic['age'].notna(), 'age unknown')</code>.
+Name the result <code>under10</code> and print its <code>value_counts()</code>.</p>
+<p>Group by <code>under10</code> and aggregate <code>survived</code> with <code>['mean', 'size']</code>. Group by <code>under10</code> and
+<code>pclass</code> together. Do the passenger counts add up to 1309?</p>
+<h2 id="step-8--filtering-groups">Step 8 : Filtering groups</h2>
+<p>The first letter of <code>cabin</code> is the deck : <code>titanic['cabin'].str[0]</code>. Store it as a column <code>deck</code>.</p>
+<p>Keep the decks with at least 20 passengers with <code>groupby('deck').filter(...)</code>. Compute the survival
+rate and the number of passengers per remaining deck with <code>agg(['mean', 'size'])</code>, and sort the
+decks from the highest to the lowest survival rate. How many passengers have no deck?</p>
+<!-- pac-exercise: dsc100.exercise.09 -->
+
+<!-- pac-source: exercises:p0021 sha256=6537a3c545dd25f675052305143d1575d012b30b8efa84a0f55580e196bfcbda -->
+
+<h1 id="exercise-9--visualization"><a id="ex-8"></a><a id="pac-dsc100.exercise.09"></a>Exercise 9 : Visualization</h1>
+<p>Open <code>exercises/09-matplotlib/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/09-matplotlib/solution.ipynb</code>.</p>
+<p>Run the first cell : it reads the World Bank file <code>world_ind_pop_data.csv</code> from Exercise 2 and
+pivots it into <code>urban</code>, with one row per <code>Year</code> from 1960 to 2014 and one column per country :
+<code>Brazil</code>, <code>China</code>, <code>India</code> and <code>Nigeria</code>. The values are the urban population as a percentage of
+each country's population. Steps 7 and 8 use <code>tips.csv</code>.</p>
+<p>Create every figure with <code>fig, ax = plt.subplots()</code> or <code>fig, axes = plt.subplots(rows, columns)</code>
+and draw with <code>ax.</code> methods.</p>
+<h2 id="step-1--line-chart">Step 1 : Line chart</h2>
+<p>Create <code>fig, ax = plt.subplots()</code>. Plot <code>urban['China']</code> against <code>urban.index</code> in blue and
+<code>urban['India']</code> in red, both on <code>ax</code>.</p>
+<p>Why does a line chart suit these yearly percentages? What can it not tell you about the number of
+people who live in cities?</p>
+<h2 id="step-2--side-by-side">Step 2 : Side by side</h2>
+<p>Create <code>fig, axes = plt.subplots(1, 2)</code>. Plot China in blue on <code>axes[0]</code> and India in red on
+<code>axes[1]</code>. Give each panel a title with <code>set_title</code> and call <code>fig.tight_layout()</code> so that the
+titles and labels fit.</p>
+<p>Compare the y-axes of the two panels. Why do the two lines look alike?</p>
+<h2 id="step-3--grid-and-style">Step 3 : Grid and style</h2>
+<p>Print <code>plt.style.available</code>. Inside <code>with plt.style.context('bmh'):</code>, create
+<code>fig, axes = plt.subplots(2, 2)</code>. Plot Brazil in green on <code>axes[0, 0]</code>, China in blue on
+<code>axes[0, 1]</code>, India in red on <code>axes[1, 0]</code> and Nigeria in purple on <code>axes[1, 1]</code>. Give each panel
+a title and call <code>fig.tight_layout()</code>.</p>
+<h2 id="step-4--limits-and-saving">Step 4 : Limits and saving</h2>
+<p>Plot China and India on one <code>ax</code>. Give each line a <code>label</code>, draw one solid and one dashed, and call
+<code>ax.legend()</code>. Set the x-range to 1980–2014 with <code>ax.set_xlim()</code> and the y-range to 0–60 with
+<code>ax.set_ylim()</code>, and label both axes. Save the figure as <code>xlim_and_ylim.png</code> with <code>fig.savefig()</code>.
+Would the chart still work when printed in grayscale?</p>
+<p>Make the same chart again, but set both ranges with one call, <code>ax.axis((1980, 2014, 0, 60))</code>, and
+save it as <code>axis_limits.png</code>.</p>
+<h2 id="step-5--legend-and-annotation">Step 5 : Legend and annotation</h2>
+<p>Plot all four countries with their names as labels. Place the legend in the upper left with
+<code>ax.legend(loc='upper left')</code> and label the y-axis <code>'Urban population (% of total)'</code>. Does the
+legend cover a line? Try another <code>loc</code> if it does.</p>
+<p>Find the first year in which more than half of China's population lived in cities, as <code>crossed</code>,
+and China's share in that year, as <code>share</code>. A Boolean mask on <code>urban['China']</code> selects the years
+from <code>urban.index</code>. In a new figure, plot the China line and mark that point with
+<code>ax.annotate('Over 50% urban', ...)</code>, with <code>xy=(crossed, share)</code>, <code>xytext=(crossed - 25, share)</code>
+and <code>arrowprops=dict(facecolor='black')</code>.</p>
+<h2 id="step-6--pandas-plotting">Step 6 : pandas plotting</h2>
+<p>Plot all four countries of <code>urban</code> with one call to <code>.plot(ax=ax)</code>. Add axis labels and a title
+that states what the chart shows.</p>
+<p>Make a second figure with <code>plot(subplots=True, layout=(2, 2))</code>, one panel per country. Which of the
+two figures compares the countries better, and which shows each country's changes better?</p>
+<h2 id="step-7--seaborn">Step 7 : Seaborn</h2>
+<p>Read <code>tips.csv</code>, with the columns <code>total_bill</code>, <code>tip</code>, <code>sex</code>, <code>day</code> and <code>time</code>. Draw the mean tip
+per day with <code>sns.catplot</code>, with <code>kind='bar'</code>, <code>x='day'</code>, <code>y='tip'</code>, <code>hue='sex'</code>, <code>col='time'</code>,
+<code>errorbar=('ci', 95)</code> and <code>seed=0</code>. Save the grid with <code>g.savefig('tips_by_time.png')</code>.</p>
+<p>A bar does not show how many bills its mean rests on. Count the bills per <code>time</code>, <code>day</code> and <code>sex</code>
+with <code>groupby(..., observed=True).size().reset_index(name='n')</code> and write the table to
+<code>tips_group_sizes.csv</code> without the index. Do the counts add up to all 244 bills? Which bar rests on
+a single bill?</p>
+<h2 id="step-8--chart-choice">Step 8 : Chart choice</h2>
+<p>Is a tip proportional to the bill? Answer with a chart of <code>tips</code> from this module, with a title
+that states what you found, and save it as <code>tip_vs_bill.png</code>. Explain in two sentences in the
+answer cell why you chose this chart and what it cannot show.</p>
+<!-- pac-exercise: dsc100.exercise.10 -->
+
+<h1 id="exercise-10--time-series"><a id="ex-9"></a><a id="pac-dsc100.exercise.10"></a>Exercise 10 : Time Series</h1>
+<p>Open <code>exercises/10-time-series/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/10-time-series/solution.ipynb</code>.</p>
+<p>Run the first cell : it imports pandas and sets <code>DATA</code> to the <code>datasets</code> folder. The steps use two
+files :</p>
+<ul>
+<li><code>weather_data_austin_2010.csv</code> : hourly temperature, dew point and pressure readings for Austin
+in 2010. The file states neither its source nor its time zone</li>
+<li><code>austin_airport_departure_data_2015_july.csv</code> : the scheduled Southwest Airlines departures from
+Austin-Bergstrom airport in July 2015, from the Bureau of Transportation Statistics, in local time</li>
+</ul>
+<p>Assume that the departure file lists every scheduled Southwest departure from Austin in July 2015.</p>
+<h2 id="step-1--parsing">Step 1 : Parsing</h2>
+<p>Read <code>weather_data_austin_2010.csv</code> into <code>weather</code>. Convert the <code>Date</code> column with
+<code>pd.to_datetime()</code> and <code>format='%Y%m%d %H:%M'</code> and make it the index with <code>set_index()</code>. Print
+<code>weather.head()</code> and the dtype of the index.</p>
+<p>Assign <code>weather.index.is_monotonic_increasing</code> to <code>is_sorted</code> and the number of duplicated
+timestamps to <code>n_duplicates</code>, and print both. Why does the order matter before you slice by date?</p>
+<h2 id="step-2--gaps">Step 2 : Gaps</h2>
+<p>A year has 8760 hours. Create the complete hourly range from the first to the last timestamp of
+<code>weather</code> with <code>pd.date_range()</code> and <code>freq='h'</code> as <code>expected</code>, and print the lengths of <code>expected</code>
+and <code>weather</code>.</p>
+<p>Select the timestamps of <code>expected</code> without a reading with <code>expected.difference()</code> as <code>missing</code> and
+print them. On which date does the gap fall, and what happens to the clocks in Texas on that date?</p>
+<h2 id="step-3--filling">Step 3 : Filling</h2>
+<p>Assign <code>weather['Temperature'].asfreq('h')</code> to <code>hourly</code> and its number of missing values to
+<code>n_filled</code>.</p>
+<p>Fill the gap twice : with <code>.ffill()</code> as <code>filled_ffill</code>, and with <code>.interpolate(method='time')</code> as
+<code>filled_interp</code>. Print the recorded, forward-filled and interpolated values from 2010-03-14 01:00 to
+05:00 side by side. Which estimate suits a temperature better? Would you fill a gap of a week in
+the same way?</p>
+<h2 id="step-4--downsampling">Step 4 : Downsampling</h2>
+<p>Resample <code>weather['Temperature']</code> to days and aggregate with
+<code>.agg(['min', 'max', 'mean', 'count'])</code> as <code>daily</code>. Select the days with fewer than 24 readings as
+<code>incomplete_days</code> and print them.</p>
+<p>Resample the temperatures to month ends with the alias <code>'ME'</code> and <code>.mean()</code> as <code>monthly_mean</code>, and
+print it rounded to one decimal. Which month is the warmest? pandas 3 no longer accepts the old
+alias <code>'M'</code>.</p>
+<h2 id="step-5--rolling-mean">Step 5 : Rolling mean</h2>
+<p>Select the August 2010 temperatures with <code>weather.loc['2010-08', 'Temperature']</code> as <code>august</code>, and
+resample them to daily maxima as <code>daily_highs</code>.</p>
+<p>Smooth the daily highs with <code>daily_highs.rolling(window=7).mean()</code> as <code>smoothed</code> and print both
+Series side by side. Why are the first six values of <code>smoothed</code> missing?</p>
+<h2 id="step-6--event-counts">Step 6 : Event counts</h2>
+<p>Read <code>austin_airport_departure_data_2015_july.csv</code> into <code>departures</code> with <code>skiprows=15</code>. Strip the
+spaces around the column names with <code>.str.strip()</code> and drop the footer row, which has no
+<code>'Flight Number'</code>.</p>
+<p>Join <code>'Date (MM/DD/YYYY)'</code>, a space and <code>'Scheduled Departure Time'</code> into one string per row. Parse
+the strings with <code>format='%m/%d/%Y %H:%M'</code> into the Series <code>scheduled</code> and make it the sorted index
+of <code>departures</code>.</p>
+<p>Four flights have an <code>'Actual Departure Time'</code> and a <code>'Wheels-off Time'</code> of <code>'00:00'</code> : they never
+departed, so their delay of 0 was never measured. Mark them in the Boolean Series <code>not_departed</code>.
+Assign the <code>'Departure Delay(Minutes)'</code> column to <code>delay</code>, with these four rows set to NaN by
+<code>.where()</code>.</p>
+<p>Count the scheduled departures per day with <code>departures.resample('D').size()</code> as
+<code>daily_departures</code> and print its summary statistics.</p>
+<h2 id="step-7--hourly-counts">Step 7 : Hourly counts</h2>
+<p>Build the DataFrame <code>july4</code> for 4 July 2015 with 24 rows, 00:00 to 23:00, and two columns :
+<code>'departures'</code>, the number of scheduled departures, and <code>'mean_delay'</code>, the mean measured delay per
+scheduled hour. Complete the outline in the notebook : reindex onto
+<code>pd.date_range('2015-07-04', periods=24, freq='h')</code> and fill only the departure counts with 0.
+Print <code>july4</code>. How many hours have no scheduled departure? Why would a mean delay of 0 be wrong for
+those hours?</p>
+<h2 id="step-8--time-zones">Step 8 : Time zones</h2>
+<p>Sort <code>scheduled</code> from Step 6 with <code>.sort_values()</code>. Localize it to <code>'America/Chicago'</code> as
+<code>scheduled_local</code>, convert that to <code>'UTC'</code> as <code>scheduled_utc</code>, and print the first rows of both.</p>
+<h2 id="if-time-permits--5">If time permits :</h2>
+<p>Try <code>weather.index.tz_localize('America/Chicago')</code> inside <code>try</code>/<code>except ValueError</code> and print the
+error. Localize again with <code>nonexistent='NaT'</code> and <code>ambiguous='NaT'</code> as <code>weather_local</code>, and select
+the timestamps of <code>weather</code> that became NaT as <code>unplaced</code>. Compare them with the gap from Step 2.
+Explain in the answer cell which clock the file seems to use.</p>
+<p>Without a solution :</p>
+<ul>
+<li>Plot <code>daily['min']</code> and <code>daily['max']</code> on one Axes, with axis labels, units and a legend, and save
+the figure with <code>fig.savefig()</code></li>
+<li>Resample <code>delay</code> to weeks ending on Sunday with <code>'W'</code> and print the mean delay beside the number
+of measured departures per week</li>
+<li>Write two sentences about the departure delays on 4 July, with the number of flights behind each
+figure</li>
+</ul>
+<!-- pac-exercise: dsc100.exercise.11 -->
+
+<h1 id="exercise-11--integration-case"><a id="ex-10"></a><a id="pac-dsc100.exercise.11"></a>Exercise 11 : Integration Case</h1>
+<p>Open <code>exercises/11-integration-case/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/11-integration-case/solution.ipynb</code>.</p>
+<p>Answer the question of the slides : how many road deaths per million inhabitants did 33 European
+countries record in 2024, per age group? Steps 1–12 follow the twelve steps on the slides ; try
+each step yourself before you look back. Step 13 audits a flawed analysis.</p>
+<p>Read <code>datasets/eurostat-road-safety-README.md</code> first. The files are unchanged Eurostat extracts,
+retrieved on 10 October 2026 : the road deaths of 2023 and 2024 (<code>tran_sf_roadus</code>) and the
+population on 1 January 2024 (<code>demo_pjan</code>).</p>
+<h2 id="step-1--raw-files">Step 1 : Raw files</h2>
+<p>Read the death file without options. Look at its shape, its first rows and the distinct values of
+<code>unit</code>, <code>age</code> and <code>geo</code>. Which rows must you leave out to count each death once? Look at the
+population file in the same way : which age labels does it use?</p>
+<h2 id="step-2--constants">Step 2 : Constants</h2>
+<p>The notebook defines <code>AGE_CODES</code>, which maps each Eurostat age code to a label, <code>LABELS</code> and <code>BINS</code>,
+as on the slide. Print <code>LABELS</code>. <code>BINS</code> has seven edges and makes six population bands : which
+label has no band?</p>
+<h2 id="step-3--typed-load">Step 3 : Typed load</h2>
+<p>Read both files with <code>usecols</code> and with <code>Int64</code> for <code>TIME_PERIOD</code> and <code>OBS_VALUE</code>. Rename
+<code>TIME_PERIOD</code>, <code>OBS_VALUE</code> and <code>OBS_FLAG</code> to <code>year</code>, <code>value</code> and <code>flag</code>. Print the row counts, the
+number of empty values and the population flags.</p>
+<h2 id="step-4--death-counts">Step 4 : Death counts</h2>
+<p>Keep the rows with <code>unit == 'NR'</code>, <code>pers_cat == 'TOTAL'</code>, year 2024 and <code>sex == 'T'</code>, without
+<code>EU27_2020</code>. Store the sorted list of countries as <code>COUNTRIES</code>, each country's <code>TOTAL</code> row as
+<code>totals</code> and the remaining age rows as <code>counts</code>. Check : 33 countries, 219 age rows and 20,875
+deaths.</p>
+<h2 id="step-5--age-labels">Step 5 : Age labels</h2>
+<p>Map the age codes to labels with <code>AGE_CODES</code> and keep the columns <code>geo</code>, <code>age_group</code> and <code>deaths</code>.
+Check that no label is missing.</p>
+<h2 id="step-6--population-bands">Step 6 : Population bands</h2>
+<p>Keep the population for <code>sex == 'T'</code> without <code>EU27_2020</code>. Leave out <code>TOTAL</code> and <code>UNK</code>, turn <code>Y_LT1</code>
+into 0 and <code>Y_OPEN</code> into 100, and band the ages with <code>pd.cut(..., right=False)</code>. Sum the result to
+one row per country and band, in a column <code>population</code>.</p>
+<h2 id="step-7--band-check">Step 7 : Band check</h2>
+<p>Check that the bands of each country add up to its published <code>TOTAL</code> population. Check one cell by
+hand : the under-15 population of the Netherlands is 2,714,040.</p>
+<h2 id="step-8--grid">Step 8 : Grid</h2>
+<p>Build the grid of 33 countries and 7 labels with <code>pd.MultiIndex.from_product()</code>. Left-merge the
+bands and then the counts onto it, with <code>validate='one_to_one'</code> and <code>indicator=True</code>. Check that the
+grid has 231 cells and that the deaths of each country add up to its <code>totals</code>.</p>
+<h2 id="step-9--missing-counts">Step 9 : Missing counts</h2>
+<p>List the cells without a death count. Which countries are they? Why must these cells stay missing?</p>
+<h2 id="step-10--rates">Step 10 : Rates</h2>
+<p>Build the summary per age group with the columns <code>countries</code>, <code>reported</code>, <code>missing</code>, <code>deaths</code>,
+<code>population</code> and <code>per_million</code>. <code>population</code> counts only the countries that report the group.
+Which age group has the highest rate, and which has the most deaths?</p>
+<h2 id="step-11--comparisons">Step 11 : Comparisons</h2>
+<p>Compare your country rates with Eurostat's own rates, <code>unit == 'P_MHAB'</code> : how many of the 186
+agree after rounding? Compare your deaths with <code>datasets/road-deaths-expected-summary.csv</code>, which
+was computed separately with SQL.</p>
+<h2 id="step-12--chart">Step 12 : Chart</h2>
+<p>Draw one bar per age group with the rate per million. Label each bar with its deaths and
+population, and name what the chart leaves out in the axis label. Save the figure as
+<code>road-deaths-by-age.png</code> before you show it.</p>
+<h2 id="step-13--audit">Step 13 : Audit</h2>
+<p>The notebook contains an analysis in the style of an AI assistant, written by the course team. It
+runs, and it has three defects :</p>
+<ol>
+<li>Rows that are not country counts, the rates and the EU aggregate, multiply the joined cells</li>
+<li><code>errors='coerce'</code> turns the labels for babies and for people aged 100 and over into NaN, which
+removes them from the population</li>
+<li>The inner join drops the deaths of unknown age and two countries, so the deaths no longer add up</li>
+</ol>
+<p>Write one check per defect that fails on the proposal, without looking back at the slides. Which of
+your own steps prevents each defect?</p>
+<h2 id="if-time-permits--6">If time permits :</h2>
+<ol>
+<li>Collect Steps 4–10 into a function <code>rates_for(sex)</code> ; the notebook gives its outline. Compute
+the rates for <code>'F'</code> and <code>'M'</code> and put the two <code>per_million</code> columns side by side. In which age
+group is the difference between women and men largest?</li>
+<li>Write 6–10 sentences in the answer cell : counts and denominators, missing values and zeros,
+unknown ages, the defects of the proposal, what a rate per inhabitant cannot show, such as
+exposure and causes, and how another analyst reruns your notebook. If all 183 deaths of unknown
+age were in the 65+ group, would its rate overtake that of the 18–24 group?</li>
+</ol>
+<!-- pac-exercise: dsc100.exercise.13 -->
+
+<h1 id="exercise-13--data-formats-and-tools"><a id="ex-11"></a><a id="pac-dsc100.exercise.13"></a>Exercise 13 : Data Formats and Tools</h1>
+<p>Open <code>exercises/13-data-formats-and-tools/exercise.ipynb</code> in JupyterLab. The solution is in
+<code>solutions/13-data-formats-and-tools/solution.ipynb</code>.</p>
+<p>Count the 2024 road deaths per road-user category, driver (<code>DRIV</code>), passenger (<code>PAS</code>), pedestrian
+(<code>PED</code>) and unknown (<code>UNK</code>), and the number of countries that report each category, with pandas,
+DuckDB and Polars. Use the same selection in every tool and sort the rows by category code.</p>
+<p>Read <code>datasets/eurostat-road-safety-README.md</code> first. <code>eurostat-road-deaths-2023-2024.csv</code> is an
+unchanged Eurostat extract of 12,254 rows, retrieved on 10 October 2026. Each row holds one value
+for a combination of unit, sex, age, road-user category, country and year. Missing data are absent
+rows ; no value is empty.</p>
+<h2 id="step-1--typed-load">Step 1 : Typed load</h2>
+<p>Read the file with <code>pd.read_csv()</code>. Read only these columns with <code>usecols</code> :</p>
+<ul>
+<li><code>LAST UPDATE</code>, parsed with <code>parse_dates</code> and <code>date_format='%d/%m/%y %H:%M:%S'</code></li>
+<li>The codes <code>sex</code>, <code>age</code>, <code>unit</code>, <code>pers_cat</code> and <code>geo</code>, with the dtype <code>category</code></li>
+<li><code>TIME_PERIOD</code> and <code>OBS_VALUE</code>, with the nullable dtype <code>Int64</code></li>
+<li><code>OBS_FLAG</code>, with the dtype <code>str</code></li>
+</ul>
+<p>Rename <code>LAST UPDATE</code>, <code>TIME_PERIOD</code>, <code>OBS_VALUE</code> and <code>OBS_FLAG</code> to <code>last_update</code>, <code>year</code>, <code>value</code>
+and <code>flag</code>. Print the dtypes and the first release time : 25 August 2026, 23:00. Check that no
+value is missing and that no combination of the five codes and the year occurs twice.</p>
+<h2 id="step-2--pandas">Step 2 : pandas</h2>
+<p>Select the rows with :</p>
+<ul>
+<li><code>unit == 'NR'</code>, the counts</li>
+<li><code>sex == 'T'</code> and <code>age == 'TOTAL'</code></li>
+<li>The year 2024</li>
+<li>Countries only, without <code>EU27_2020</code></li>
+</ul>
+<p>Leave out the road-user category <code>TOTAL</code>. Group by <code>pers_cat</code> with <code>observed=True</code>, sum the values
+as <code>deaths</code> and count the rows as <code>countries</code>.</p>
+<p>Check : 126 rows ; <code>DRIV</code> 14,078 deaths in 31 countries, <code>PAS</code> 3,007 in 31, <code>PED</code> 3,706 in 31 and
+<code>UNK</code> 84 in 33. Check that the categories add up to the 20,875 deaths of the <code>TOTAL</code> rows in the
+same selection. Why does <code>UNK</code> have 33 countries and the other categories 31?</p>
+<h2 id="step-3--parquet">Step 3 : Parquet</h2>
+<p>Write the loaded DataFrame to <code>deaths.parquet</code> with <code>index=False</code> and read it back. Compare the
+dtypes before and after. Print the stored schema with <code>pyarrow.parquet.read_schema()</code> : how does
+Parquet store the categories? Read only the columns <code>pers_cat</code>, <code>geo</code>, <code>year</code> and <code>value</code>.</p>
+<h2 id="step-4--duckdb">Step 4 : DuckDB</h2>
+<p>Repeat the count with DuckDB : <code>con = duckdb.connect()</code> and a query
+<code>FROM read_parquet('deaths.parquet')</code> with the same filters, <code>GROUP BY pers_cat</code> and
+<code>ORDER BY pers_cat</code>. Name the sum <code>deaths</code> and the count <code>countries</code>, and fetch the result with
+<code>.df()</code>. Are the deaths and countries the same as in pandas?</p>
+<h2 id="step-5--polars">Step 5 : Polars</h2>
+<p>Repeat it with a lazy query : <code>pl.scan_parquet('deaths.parquet')</code>, expressions in <code>.filter()</code>,
+<code>.group_by('pers_cat')</code>, <code>.agg()</code> with <code>pl.col('value').sum()</code> and <code>pl.len()</code>, and
+<code>.sort('pers_cat')</code>. Print <code>.explain()</code> and find the Parquet scan, the selected columns and the
+filter. Run the query with <code>.collect()</code> and compare the result with pandas.</p>
+<h2 id="step-6--reflection">Step 6 : Reflection</h2>
+<p>Write 5–8 sentences in the answer cell. Explain the selection, why the <code>TOTAL</code> rows and
+<code>EU27_2020</code> are left out, and why an absent row is not a zero. Which tool would you choose for
+interactive inspection, and which for repeated queries over a large Parquet file? Mention column
+selection and memory, and the difference between Arrow and Parquet.</p>
+<h2 id="if-time-permits--7">If time permits :</h2>
+<ul>
+<li>Run <code>demos/13-data-formats-and-tools/demo08-numba-optional.py</code> after
+<code>uv sync --frozen --all-groups</code>. Check that the three results agree before you compare the timings</li>
+</ul>
+</div>
+	
+
+</body></html>
