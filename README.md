@@ -9,6 +9,26 @@ compares Parquet, DuckDB and Polars.
 This repository contains the course handouts and runnable material. It is updated
 after a successful course build.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/FeikoWielsma/Python-Data-Analysis-Student)
+
+## Following the course online : GitHub Codespaces
+
+If you join remotely, or cannot install software on your machine, you can do
+the whole course in your browser. You need a free GitHub account; it includes
+60 hours a month of Codespaces, which is more than the course uses.
+
+1. Open <https://codespaces.new/FeikoWielsma/Python-Data-Analysis-Student> and
+   click **Create codespace**. The first start takes a few minutes: it installs
+   uv and the course's Python packages.
+2. You get VS Code in the browser with Python 3.14, uv, pandas, JupyterLab and the
+   Python, Jupyter and Ruff extensions installed. Skip **Local setup** below. Open
+   a notebook, such as `demos/02-intro-pandas/demos.ipynb`, and pick the `.venv`
+   kernel if VS Code asks. Prefer JupyterLab? In <https://github.com/codespaces>,
+   choose **...** next to your codespace and then **Open in JupyterLab**.
+3. Your work is kept inside the codespace between days. Reopen it from
+   <https://github.com/codespaces>. A codespace stops itself after 30 minutes
+   of inactivity; that is harmless, your files stay.
+
 ## Course material
 
 - [Slides (PDF)](DSC100-Data-Analysis-with-Python.pdf)
