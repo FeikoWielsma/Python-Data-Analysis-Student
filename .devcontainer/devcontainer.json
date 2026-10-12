@@ -1,0 +1,29 @@
+// GitHub Codespaces setup for students who follow the course online.
+// It installs the same locked environment as the README's local setup (uv sync)
+// and puts the project's .venv first on PATH, so VS Code notebooks and
+// "Open in JupyterLab" both use it.
+{
+  "name": "Data Analysis with Python (DSC100)",
+  "image": "mcr.microsoft.com/devcontainers/python:3.14",
+  "hostRequirements": { "cpus": 2 },
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 sh && uv sync --frozen",
+  "remoteEnv": {
+    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerEnv:PATH}"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "workbench.startupEditor": "readme"
+      }
+    }
+  }
+}
