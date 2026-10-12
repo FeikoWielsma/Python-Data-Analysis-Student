@@ -40,6 +40,9 @@ ignore = [
 "solutions/**" = ["B905", "C408"]
 # `strict=` on zip() is a distraction in the teaching demos.
 "demos/**" = ["B905"]
+# The demo notebooks put every script of a module in one namespace, so imports repeat and
+# the timing and plotting demos keep their per-script exceptions.
+"demos/*/demos.ipynb" = ["B023", "B905", "F811", "N806", "N816", "PERF401", "RUF100"]
 # The timing demos compare an explicit loop with the vectorized version.
 "demos/01-numpy/demo02_time_comparison.py" = ["N806", "PERF401"]
 "demos/01-numpy/demo13-c-and-f-order-performance.py" = ["B023"]

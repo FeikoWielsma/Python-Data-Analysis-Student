@@ -19,3 +19,12 @@ desktop.ini
 /build/
 /course-work/
 /my-project/
+
+# Files the demos write next to their data
+/datasets/demos/**/*.png
+/datasets/demos/**/*.pdf
+/datasets/demos/**/*.svg
+/datasets/demos/02-intro-pandas/sunspots.*
+/datasets/demos/02-intro-pandas/summary.csv
+/datasets/demos/13-data-formats-and-tools/orders.parquet
+/datasets/road-deaths-by-age.png

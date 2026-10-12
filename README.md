@@ -14,7 +14,8 @@ after a successful course build.
 - [Slides (PDF)](DSC100-Data-Analysis-with-Python.pdf)
 - [Exercise guide (PDF)](DSC100-Data-Analysis-with-Python-Exercises.pdf)
 - [Exercise guide (HTML)](DSC100-Data-Analysis-with-Python-Exercises.html)
-- `demos/`: example scripts, one folder per module
+- `demos/`: the examples from the slides, one folder per module, as a notebook
+  (`demos.ipynb`) and as separate scripts
 - `exercises/`: notebooks with instructions and cells to complete
 - `solutions/`: reference answers
 - `datasets/`: data files and their source information
@@ -34,8 +35,8 @@ after a successful course build.
 | 11 Integration Case | [Notebook](exercises/11-integration-case/exercise.ipynb) | [Notebook](solutions/11-integration-case/solution.ipynb) |
 | 13 Data Formats and Tools (optional) | [Notebook](exercises/13-data-formats-and-tools/exercise.ipynb) | [Notebook](solutions/13-data-formats-and-tools/solution.ipynb) |
 
-Modules 12 (Scikit-Learn Essentials) and appendix A (Reading Other Sources) have
-demo scripts in `demos/`.
+Every module, including 12 (Scikit-Learn Essentials) and appendix A (Reading Other
+Sources), has its demos in `demos/<module>/demos.ipynb`.
 
 ## Browser notebooks
 
@@ -73,8 +74,13 @@ to bottom.
 
 ## Running a demo
 
-Most demos read their data with a bare file name. Run them from the matching data
-folder, for example:
+Open `demos/<module>/demos.ipynb` in JupyterLab and run its first cell: it switches to
+the folder with that module's data files. Then run any demo with Shift+Enter. The
+heading above each cell matches the `demoNN · ...` pill on the slide. Change the code
+and run the cell again to experiment; `git restore demos` brings back the original.
+
+The same demos are in the folder as separate `.py` scripts. They read their data with
+a bare file name, so run a script from the matching data folder, for example:
 
 ```sh
 cd datasets/demos/02-intro-pandas
